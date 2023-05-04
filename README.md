@@ -15,3 +15,5 @@ hash: a60fb54d9513235f66be44a2e00b1b17
     
     https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=8770fe34d3812c4e1b5800c8bbfd9ea8&hash=a60fb54d9513235f66be44a2e00b1b17
 
+Página de diseño:
+https://lucid.app/lucidspark/b2868472-7e4f-4494-9b74-ea3146ac6ca4/edit?invitationId=inv_6ec77256-6241-4d27-ad8a-c3b51e575d58 

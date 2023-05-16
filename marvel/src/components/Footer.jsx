@@ -1,32 +1,16 @@
-import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
-import {Contacto} from "./Contacto";
-import {LinksInteres} from "./LinksInteres";
-import {MapaSitio} from "./MapaSitio";
-import "../css.css";
+import { Link } from "react-router-dom";
 
-export const Footer = ()=>{
-
-
-    return(
-        <>
-    <BrowserRouter>
-
-        <Routes>
-          <Route path="/contacto" element={<Contacto/>}/>
-          <Route path="/mapa" element={<MapaSitio/>}/>
-          <Route path="/links" element={<LinksInteres/>}/>
-        </Routes>
-
+export const Footer = () => {
+    return (
         <>
             <footer className="footer">
-                <Link class="link" to='/contacto'>Contacto</Link> 
-                <Link class="link" to='/mapa'>Mapa del Sitio</Link> 
-                <Link class="link" to='/links'>Link de Interes</Link> 
+                <div className="footer-links">
+                <Link class="link" to='/contacto'>Contacto</Link>
+                <Link class="link" to='/mapa'>Mapa del Sitio</Link>
+                <Link class="link" to='/links_interes'>Enlace de interés</Link>
+                </div>
+                &copy; Copyright 2023
             </footer>
-        </>
-
-    </BrowserRouter> 
-      
         </>
     )
 }

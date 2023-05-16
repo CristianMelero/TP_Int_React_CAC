@@ -1,4 +1,3 @@
-import "../css.css";
 import BasicExample from "./Noticia";
 
 export const Noticias = ()=>  {

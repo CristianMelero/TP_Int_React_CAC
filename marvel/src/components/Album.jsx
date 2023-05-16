@@ -1,8 +1,13 @@
+import { Header, Footer } from './index';
 
-export const Album = ()=> {
+export const Album = () => {
   return (
     <>
-    <h1><b><h1>ALBUM</h1></b></h1>
+      <Header />
+      <div className="main">
+        <h1><b><h1>ALBUM</h1></b></h1>
+      </div>
+      <Footer />
     </>
   );
 }

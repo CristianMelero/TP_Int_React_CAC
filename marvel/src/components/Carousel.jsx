@@ -29,7 +29,7 @@ function UncontrolledExample() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://areajugones.sport.es/wp-content/uploads/2021/04/capitana-marvel-2-1080x609.jpg.webp"
+            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/capitana-marvel-brie-larson-1544518299.jpeg"
             alt="Third slide"
           />
   

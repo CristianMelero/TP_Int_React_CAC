@@ -21,7 +21,8 @@ export const Album = () => {
 	const filteredCharacters = data?.data?.results?.filter(
 		(character) =>
 			character.thumbnail &&
-			!character.thumbnail.path.includes("image_not_available"),
+			!character.thumbnail.path.includes("image_not_available") &&
+			!character.thumbnail.path.includes("4c002e0305708")
 	);
 
 	if (!data) {
@@ -30,12 +31,10 @@ export const Album = () => {
 
 	return (
 		<>
-			<div className="main">
+			<Container>
 				<h1>
 					<b>ALBUM</b>
 				</h1>
-			</div>
-			<Container>
 				<Row>
 					{filteredCharacters.map((character) => (
 						<Col key={character.id} sm={6} md={4} lg={3}>
@@ -61,7 +60,7 @@ export const Album = () => {
 				</button>
 				<button
 					onClick={nextPage}
-					disabled={currentPage === data.data.total / 20}>
+					disabled={currentPage === totalPages / 20}>
 					Siguiente
 				</button>
 			</div>

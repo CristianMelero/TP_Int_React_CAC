@@ -7,6 +7,7 @@ import { db } from '../firebaseConfig/firebase.js';
 export const Edit = () => {
     const [titulo, setTitulo] = useState("")
     const [descripcion, setDescripcion] = useState("")
+    const [foto, setFoto] = useState("")
 
     const navigate = useNavigate()
 
@@ -17,6 +18,7 @@ export const Edit = () => {
         const noticiaDoc = doc(db, 'noticias', id);
         const data = {
             titulo: titulo,
+            foto: foto,
             descripcion: descripcion,
         }
         await updateDoc(noticiaDoc, data);
@@ -27,6 +29,7 @@ export const Edit = () => {
         const noticiaDoc = await getDoc(doc(db, 'noticias', id));
         if (noticiaDoc.exists()) {
             setTitulo(noticiaDoc.data().titulo);
+            setFoto(noticiaDoc.data().foto);
             setDescripcion(noticiaDoc.data().descripcion);
         } else {
             console.log('La noticia no existe.');
@@ -56,8 +59,19 @@ export const Edit = () => {
                                 </div>
 
                                 <div className="mb-3">
+                                    <Form.Label>Imagen URL:</Form.Label>
+                                    <Form.Control
+                                        value={foto}
+                                        onChange={(e) => setFoto(e.target.value)}
+                                        type="text"
+                                    />
+                                </div>
+
+                                <div className="mb-3">
                                     <Form.Label className="form-label">Descripción:</Form.Label>
-                                    <Form.Control as="textarea" rows={10}
+                                    <Form.Control as="textarea"
+                                        contentEditable="true"
+                                        rows={10}
                                         value={descripcion}
                                         onChange={(e) => setDescripcion(e.target.value)}
                                     />

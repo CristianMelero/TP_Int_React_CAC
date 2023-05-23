@@ -32,9 +32,11 @@ export const Noticias = () => {
 			<div className="noticiasCard">
 				{noticias.slice(0, 4).map((noticia) => (
 					<Card style={{ width: '18rem' }} key={noticia.id}>
+						<Card.Img src={noticia.foto}></Card.Img>
 						<Card.Body>
 							<Card.Title>{noticia.titulo}</Card.Title>
-							<Card.Text>{noticia.descripcion.substring(0, 200)}...</Card.Text>
+							<br></br>
+							<Card.Text>{noticia.descripcion.substring(0, 100)}...</Card.Text>
 							<Link to={`noticia/${noticia.id}`}><Button variant="danger" class="btn btn-outline-dark">Leer más</Button></Link>
 						</Card.Body>
 					</Card>

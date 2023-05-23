@@ -17,6 +17,7 @@ export const Create = () => {
         e.preventDefault()
         await addDoc(noticiasCollection, {
             titulo: titulo,
+            foto: foto,
             descripcion: descripcion,
         })
         navigate("/")
@@ -38,6 +39,14 @@ export const Create = () => {
                                     onChange={(e) => setTitulo(e.target.value)}
                                     className="form-control"
                                     type="text" />
+                            </div>
+
+                            <div className="mb-3">
+                                <Form.Label>Imagen URL:</Form.Label>
+                                <Form.Control
+                                value={foto}
+                                onChange={(e) => setFoto(e.target.value)}
+                                type="text"></Form.Control>
                             </div>
 
                             <div className="mb-3">

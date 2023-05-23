@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 export const Noticia = () => {
   const [titulo, setTitulo] = useState("")
+  const [foto, setFoto] = useState("")
   const [descripcion, setDescripcion] = useState("")
 
   const { id } = useParams();
@@ -16,6 +17,7 @@ export const Noticia = () => {
     const noticiaDoc = await getDoc(doc(db, 'noticias', id));
     if (noticiaDoc.exists()) {
       setTitulo(noticiaDoc.data().titulo);
+      setFoto(noticiaDoc.data().foto);
       setDescripcion(noticiaDoc.data().descripcion);
     } else {
       console.log('La noticia no existe');
@@ -38,7 +40,7 @@ export const Noticia = () => {
       <div class="main">
         <div class="noticia-container">
           <h1 class="titulo">{titulo}</h1>
-          <img src=""></img>
+          <img src={foto} width="1000"></img>
           <p class="noticia-texto">
             {descripcion}
           </p>

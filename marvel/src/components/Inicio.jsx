@@ -5,7 +5,7 @@ export const Inicio = () => {
 	return (
 			<div className="main">
 				<UncontrolledExample />
-				<h3 className="titulo">NOTICIAS</h3>
+				<h3 className="titulo">Últimas noticias</h3>
 				<Noticias />
 				<h3 className="titulo">TITULO</h3>
 				<br />

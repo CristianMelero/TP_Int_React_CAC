@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .main {
     min-height: 100vh;
     background-color: whitesmoke;
@@ -23,6 +25,7 @@
 
 .titulo {
     text-align: center;
+    margin: 1%;
 }
 
 .noticias {
@@ -51,4 +54,44 @@
     align-items: center;
     gap: 10%;
     margin-bottom: 25px;
+}
+
+.noticiasCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.noticiasCard .card {
+    margin: 2%;
+}
+
+.card-text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.noticiabtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.noticia-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noticia-texto {
+    margin: 5%;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    white-space: break-spaces;
+}
+
+.btngroup {
+    display: flex;
+    gap: 1%;
+    margin: 2% 5%;
 }

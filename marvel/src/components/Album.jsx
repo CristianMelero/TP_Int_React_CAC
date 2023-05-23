@@ -30,11 +30,9 @@ export const Album = () => {
 
 	return (
 		<>
-			<div className="main">
 				<h1>
-					<b>ALBUM</b>
+					<b>ÁLBUM</b>
 				</h1>
-			</div>
 			<Container>
 				<Row>
 					{filteredCharacters.map((character) => (

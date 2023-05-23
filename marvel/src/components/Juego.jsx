@@ -1,7 +1,11 @@
 export const Juego = () => {
 	return (
-		<h1>
-			<b>JUEGO</b>
-		</h1>
+		<>
+			<div class="main">
+				<h1>
+					<b>JUEGO</b>
+				</h1>
+			</div>
+		</>
 	);
 };

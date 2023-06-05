@@ -1,14 +1,20 @@
+import Icon from '@mdi/react';
+import { mdiCartVariant } from '@mdi/js';
+import "./Tienda.css"
+
 import { Count } from "./Count";
+import { Items } from './Items';
 
 export const Tienda = () => {
 	return (
-		<div className="main">
-			<h1>
+		<div className="tienda">
+			<div className='tienda-container'>
 				<b>
-					<h1>TIENDA</h1>
-					<Count/>
+					<h1><Icon path={mdiCartVariant} size={4} /> Marvel Shop</h1>
 				</b>
-			</h1>
+				<p>Los productos de Marvel que estabas buscando</p>
+			</div>
+			<Items/>
 		</div>
 	);
 };

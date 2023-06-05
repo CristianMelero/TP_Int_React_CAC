@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {CartProvider} from "./context/cartContext"
 import { Header } from "./components/Header";
 import { Inicio } from "./components/Inicio";
 import { Album } from "./components/Album";
@@ -18,6 +19,7 @@ import "./styles.css";
 function App() {
 	return (
 		<>
+			<CartProvider>
 			<BrowserRouter>
 				<Header />
 				<Routes>
@@ -36,6 +38,7 @@ function App() {
 				</Routes>
 				<Footer />
 			</BrowserRouter>
+			</CartProvider>
 		</>
 	);
 }

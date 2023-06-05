@@ -7,7 +7,7 @@ export const Count = (props)=>{
     const [count, setCount] = useState(1);
 
     const handleIncrement = () => {
-        if (count >= 1 && count < 30) { //30 es un stock mentiroso por ahora dps sera variable
+        if (count >= 1 && count < 10) { // es un stock mentiroso por ahora dps sera variable
             setCount(count +1)};
       };
     

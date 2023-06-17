@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {CartProvider} from "./context/cartContext"
 import { Header } from "./components/Header";
 import { Inicio } from "./components/Inicio";
 import { Album } from "./components/Album";
@@ -9,12 +10,17 @@ import { LinksInteres } from "./components/LinksInteres";
 import { Login } from "./components/Login";
 import { MapaSitio } from "./components/MapaSitio";
 import { Nosotros } from "./components/Nosotros";
-import { Tienda } from "./components/Tienda";
+import { Tienda } from "./components/tienda/Tienda";
+import { Create } from "./components/Create";
+import { Edit } from "./components/Edit";
+import { Noticia } from "./components/Noticia";
 import "./styles.css";
+import { CartView } from "./components/tienda/CartView";
 
 function App() {
 	return (
 		<>
+			<CartProvider>
 			<BrowserRouter>
 				<Header />
 				<Routes>
@@ -27,9 +33,15 @@ function App() {
 					<Route path="/links_interes" element={<LinksInteres />} />
 					<Route path="/tienda" element={<Tienda />} />
 					<Route path="/nosotros" element={<Nosotros />} />
+					<Route path="/create" element={<Create/>}></Route>
+					<Route path="/edit/:id" element={<Edit/>}></Route>
+					<Route path="/noticia/:id" element={<Noticia/>}></Route>
+					<Route path="/noticia/:id" element={<Noticia/>}></Route>
+					<Route path="/cart" element={<CartView/>}></Route>
 				</Routes>
 				<Footer />
 			</BrowserRouter>
+			</CartProvider>
 		</>
 	);
 }

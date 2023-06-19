@@ -21,24 +21,24 @@ export const CardDetail= ({item})=> {
             setCart([...cart, item])
         }
     };
+    
 
     
 
     return (
     
         <div className="p-2 container">
-            <div className="card text-center" style={{width:"18rem"}}>
+            <div className="card text-center bg-dark " style={{width:"18rem"}}>
                 <img src={item.img} className="card-img-top p-4 rounded mx-auto d-block" alt={item.name}/>
                 <div className="card-body">
-                    <h3 className="card-title nameCard">{item.name}</h3>
-                    {/* <p className="card-text text-dark .detailCard">{item.detail}</p> */}
-                    <h5 className="priceCard">${item.price}</h5>
+                    <h3 className="card-title nameCard text-light">{item.name}</h3>
+                    <h5 className="priceCard text-light">${item.price}</h5>
 
                     <Count/>
 
                     <button
                         className="btn btn-secondary mt-4" 
-                        style={{width:"10rem", fontSize:"24px"}}
+                        style={{width:"13rem", fontSize:"22px"}}
                         initial={1} 
                         stock={item.stock} 
                         onClick={()=> addToCart(item)}

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {CartProvider} from "./context/cartContext"
 import { Header } from "./components/Header";
 import { Inicio } from "./components/Inicio";
-import { Album } from "./components/Album";
+import { Album } from "./components/album/Album";
 import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
 import { Juego } from "./components/Juego";

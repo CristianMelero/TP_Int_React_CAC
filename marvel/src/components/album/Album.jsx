@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
-import MarvelAPI from "../utils/MarvelApi";
+import { Card, Col, Container, Row, SplitButton } from "react-bootstrap";
+import MarvelAPI from "../../utils/MarvelApi";
+import { Spinner } from "../Spinner";
 
 export const Album = () => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -26,7 +27,7 @@ export const Album = () => {
 	);
 
 	if (!data) {
-		return <div>Cargando...</div>;
+		return <Spinner/>;
 	}
 
 	return (
@@ -52,7 +53,7 @@ export const Album = () => {
 				</Row>
 			</Container>
 			<div>
-				Actualmente estás en la página {currentPage} de {totalPages}
+				Estás en la página {currentPage} de {totalPages}
 			</div>
 			<div className="pagination">
 				<button onClick={previousPage} disabled={currentPage === 1}>

@@ -11,14 +11,14 @@ export const CardDetail= ({item})=> {
     const { cart, setCart } = useContext(CartContext);
     //const [countCart, setCountCart] = useState(0);
 
-    const addToCart = (item)=> {
+    const addToCart = (product)=> {
         
-        const repeatProduct = cart.find((item) => item.id === item.id);
+        const repeatProduct = cart.find((item) => item.id === product.id);
 
         if(repeatProduct){
-            setCart(cart.map((item)=> item.id === item.id ? {...item, quanty: repeatProduct.quanty +1} : item))
+            setCart(cart.map((item)=> item.id === product.id ? {...item, quanty: repeatProduct.quanty +1} : item))
         }else{
-            setCart([...cart, item])
+            setCart([...cart, product])
         }
     };
     

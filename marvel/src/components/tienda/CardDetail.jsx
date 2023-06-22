@@ -43,7 +43,7 @@ export const CardDetail= ({item})=> {
 
                     <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
 
-                    <Link to={`/detail/:${item.id}`}>
+                    <Link to={`/detail/${item.id}`}>
                         <a className="text-secondary mt-4" style={{width:"13rem", fontSize:"22px"}}>
                             Ver detalles
                         </a> 

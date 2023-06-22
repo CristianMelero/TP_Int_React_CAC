@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Col, Container, Row, SplitButton } from "react-bootstrap";
 import MarvelAPI from "../../utils/MarvelApi";
 import { Spinner } from "../Spinner";
 
 export const Album = () => {
 	const [currentPage, setCurrentPage] = useState(1);
-	const { data, totalPages } = MarvelAPI({ currentPage, setCurrentPage });
+	const { data } = MarvelAPI({ currentPage });
+	const [totalPages, setTotalPages] = useState(0);
+
+	useEffect(() => {
+		if (data) {
+			const calculatedTotalPages = Math.ceil(data.length / 20);
+			setTotalPages(calculatedTotalPages);
+		}
+	}, [data]);
 
 	const previousPage = () => {
 		if (currentPage > 1) {
@@ -19,16 +27,13 @@ export const Album = () => {
 		}
 	};
 
-	const filteredCharacters = data?.data?.results?.filter(
-		(character) =>
-			character.thumbnail &&
-			!character.thumbnail.path.includes("image_not_available") &&
-			!character.thumbnail.path.includes("4c002e0305708")
-	);
-
 	if (!data) {
-		return <Spinner/>;
+		return <Spinner />;
 	}
+
+	const startIndex = (currentPage - 1) * 20;
+	const endIndex = startIndex + 20;
+	const charactersOnPage = data.slice(startIndex, endIndex);
 
 	return (
 		<>
@@ -37,12 +42,13 @@ export const Album = () => {
 					<b>ÁLBUM</b>
 				</h1>
 				<Row>
-					{filteredCharacters.map((character) => (
+					{charactersOnPage.map((character) => (
 						<Col key={character.id} sm={6} md={4} lg={3}>
 							<Card>
 								<Card.Img
 									variant="top"
 									src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+									style={{ maxHeight: "300px" }}
 								/>
 								<Card.Body>
 									<Card.Title>{character.name}</Card.Title>
@@ -61,10 +67,88 @@ export const Album = () => {
 				</button>
 				<button
 					onClick={nextPage}
-					disabled={currentPage === totalPages / 20}>
+					disabled={currentPage === totalPages}>
 					Siguiente
 				</button>
 			</div>
 		</>
 	);
 };
+
+// CODIGO QUE MUESTRA TODO Y MANEJA PAGINACION
+// import React, { useState, useEffect } from "react";
+// import { Card, Col, Container, Row, SplitButton } from "react-bootstrap";
+// import MarvelAPI from "../../utils/MarvelApi";
+// import { Spinner } from "../Spinner";
+
+// export const Album = () => {
+// 	const [currentPage, setCurrentPage] = useState(1);
+// 	const { data } = MarvelAPI();
+// 	const [totalPages, setTotalPages] = useState(0);
+
+// 	useEffect(() => {
+// 		if (data) {
+// 		  const calculatedTotalPages = Math.ceil(data.length / 1);
+// 		  setTotalPages(calculatedTotalPages);
+// 		}
+// 	  }, [data]);
+
+// 	const previousPage = () => {
+// 		if (currentPage > 1) {
+// 			setCurrentPage(currentPage - 1);
+// 		}
+// 	};
+
+// 	const nextPage = () => {
+// 		if (currentPage < totalPages) {
+// 			setCurrentPage(currentPage + 1);
+// 		}
+// 	};
+
+// 	if (!data) {
+// 		return <Spinner />;
+// 	}
+
+// 	const startIndex = (currentPage - 1) * 20;
+// 	const endIndex = startIndex + 20;
+// 	const charactersOnPage = data.slice(startIndex, endIndex);
+
+// 	return (
+// 		<>
+// 			<Container>
+// 				<h1>
+// 					<b>ÁLBUM</b>
+// 				</h1>
+// 				<Row>
+// 					{charactersOnPage.map((character) => (
+// 						<Col key={character.id} sm={6} md={4} lg={3}>
+// 							<Card>
+// 								<Card.Img
+// 									variant="top"
+// 									src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+// 									style={{maxHeight:"300px"}}
+// 								/>
+// 								<Card.Body>
+// 									<Card.Title>{character.name}</Card.Title>
+// 								</Card.Body>
+// 							</Card>
+// 						</Col>
+// 					))}
+// 				</Row>
+// 			</Container>
+// 			<div>
+// 				Estás en la página {currentPage} de {totalPages}
+// 			</div>
+// 			<div className="pagination">
+// 				<button onClick={previousPage} disabled={currentPage === 1}>
+// 					Anterior
+// 				</button>
+// 				<button
+// 					onClick={nextPage}
+// 					disabled={currentPage === totalPages }>
+// 					Siguiente
+// 				</button>
+// 			</div>
+// 		</>
+// 	);
+// };

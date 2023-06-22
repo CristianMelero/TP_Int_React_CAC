@@ -5,7 +5,7 @@ import Icon from "@mdi/react";
 import { mdiCloseBox } from "@mdi/js";
 //import "./ItemCart.css"
 
-export const ItemCart = ({ item }) => {
+export const ItemCart = ({ item, quantity }) => {
 	const { removeItem } = useContext(CartContext);
 	return (
 		<>
@@ -17,7 +17,7 @@ export const ItemCart = ({ item }) => {
 							<p className="p-3">{item.name}</p>
 						</div>
 					</th>
-					<td className="col-2 ">{item.quanty}</td>
+					<td className="col-2 ">{}</td>
 					<td className="col-2 ">$ {item.price}</td>
 					<td className="col-2"> $ {item.quanty * item.price}</td>
 					<td>

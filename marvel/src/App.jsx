@@ -17,6 +17,7 @@ import { Noticia } from "./components/Noticia";
 import "./styles.css";
 import { CartView } from "./components/tienda/CartView";
 import { MediosPagos } from "./components/tienda/MediosPagos";
+import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
 
 function App() {
 	return (
@@ -39,6 +40,8 @@ function App() {
 					<Route path="/noticia/:id" element={<Noticia/>}></Route>
 					<Route path="/noticia/:id" element={<Noticia/>}></Route>
 					<Route path="/cart" element={<CartView/>}></Route>
+					<Route path="/detail/:id" element={<ItemDetailContainer/>}></Route>
+					
 					<Route path="/mediosdepago" element={<MediosPagos/>}></Route>
 				</Routes>
 				<Footer />

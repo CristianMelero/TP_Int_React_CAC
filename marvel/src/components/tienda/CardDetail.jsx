@@ -1,26 +1,33 @@
 import "./CardDetail.css"
-import { Count } from "./Count";
+import Swal from "sweetalert2"
 import { useContext, useState } from "react";
 import { CartContext } from '../../context/cartContext.jsx';
+import { ItemCount } from "./ItemCount";
+import { Link } from "react-router-dom";
+
 
 
 
 
 export const CardDetail= ({item})=> {
-    //const { addToCart } = useContext(CartContext);
-    const { cart, setCart } = useContext(CartContext);
-    //const [countCart, setCountCart] = useState(0);
+    const { addToCart } = useContext(CartContext);
+    const [countCart, setCountCart] = useState([])
+    
+    const onAdd = (quantity) => {
 
-    const addToCart = (product)=> {
-        
-        const repeatProduct = cart.find((item) => item.id === product.id);
-
-        if(repeatProduct){
-            setCart(cart.map((item)=> item.id === product.id ? {...item, quanty: repeatProduct.quanty +1} : item))
-        }else{
-            setCart([...cart, product])
-        }
-    };
+        addToCart(item, quantity);
+  
+  setCountCart(quantity)
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: `${quantity} ${item.name} agregados al carrito`,
+    showConfirmButton: false,
+    timer: 1500
+  })
+  
+    }
+    
     
 
     
@@ -34,17 +41,15 @@ export const CardDetail= ({item})=> {
                     <h3 className="card-title nameCard text-light">{item.name}</h3>
                     <h5 className="priceCard text-light">${item.price}</h5>
 
-                    <Count/>
+                    <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
 
-                    <button
-                        className="btn btn-secondary mt-4" 
-                        style={{width:"13rem", fontSize:"22px"}}
-                        initial={1} 
-                        stock={item.stock} 
-                        onClick={()=> addToCart(item)}
-                    >
-                            Agregar al carrito
-                    </button>
+                    <Link to={`/detail/:${item.id}`}>
+                        <a className="text-secondary mt-4" style={{width:"13rem", fontSize:"22px"}}>
+                            Ver detalles
+                        </a> 
+                    </Link>
+
+                    
                     
                 </div>
             </div>

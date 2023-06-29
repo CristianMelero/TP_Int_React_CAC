@@ -1,0 +1,282 @@
+[
+    {
+      "Name": "Ant-Man",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/53176aa9df48d.jpg",
+      "Intelligence": "6",
+      "Strength": "7",
+      "Speed": "3",
+      "Durability": "3",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "3"
+    },
+    {
+      "Name": "Black Widow",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b.jpg",
+      "Intelligence": "3",
+      "Strength": "3",
+      "Speed": "2",
+      "Durability": "3",
+      "Energy_Projection": "3",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Captain America",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087.jpg",
+      "Intelligence": "3",
+      "Strength": "3",
+      "Speed": "2",
+      "Durability": "3",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Doctor Strange",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/5261a85a501fe.jpg",
+      "Intelligence": "4",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Hawkeye",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/e/90/50fecaf4f101b.jpg",
+      "Intelligence": "3",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "The Hulk",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg",
+      "Intelligence": "2",
+      "Strength": "7",
+      "Speed": "5",
+      "Durability": "7",
+      "Energy_Projection": "5",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Iron Man",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg",
+      "Intelligence": "6",
+      "Strength": "6",
+      "Speed": "5",
+      "Durability": "6",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Spider-Man",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg",
+      "Intelligence": "4",
+      "Strength": "4",
+      "Speed": "3",
+      "Durability": "3",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Thor",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg",
+      "Intelligence": "3",
+      "Strength": "7",
+      "Speed": "7",
+      "Durability": "6",
+      "Energy_Projection": "5",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Vision",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/5111527040594.jpg",
+      "Intelligence": "4",
+      "Strength": "5",
+      "Speed": "3",
+      "Durability": "6",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "3"
+    },
+    {
+      "Name": "War Machine",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/c/f0/535febf826de5.jpg",
+      "Intelligence": "3",
+      "Strength": "6",
+      "Speed": "5",
+      "Durability": "6",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Baron Zemo",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/4c0041f84c9fe.jpg",
+      "Intelligence": "4",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "5"
+    },
+    {
+      "Name": "Destroyer",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/d/90/526547f509313.jpg",
+      "Intelligence": "2",
+      "Strength": "7",
+      "Speed": "5",
+      "Durability": "7",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Loki",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/d/90/526547f509313.jpg",
+      "Intelligence": "5",
+      "Strength": "4",
+      "Speed": "3",
+      "Durability": "6",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "3"
+    },
+    {
+      "Name": "Bruja Escarlata",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/5261a7d7c394b.jpg",
+      "Intelligence": "3",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "3"
+    },
+    {
+      "Name": "Deadpool",
+      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/90/5261a86cacb99.jpg",
+      "Intelligence": "2",
+      "Strength": "4",
+      "Speed": "2",
+      "Durability": "4",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Winter Soldier",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/8/89/Original_Sin_Vol_1_8_Dell%27Otto_Variant_Textless.jpg/revision/latest?cb=20140513165300",
+      "Intelligence": "2",
+      "Strength": "4",
+      "Speed": "2",
+      "Durability": "4",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Falcon",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/e/e1/Captain_America_Symbol_of_Truth_Vol_1_1_Clarke_Variant_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20220515050639",
+      "Intelligence": "2",
+      "Strength": "2",
+      "Speed": "3",
+      "Durability": "2",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Black Panther",
+      "Image_Link": "https://www.tonica.la/__export/1599345076968/sites/debate/img/2020/09/05/black-panther-comics-estan-disponibles-manera-gratuita-comixology.jpg_1137202005.jpg",
+      "Intelligence": "5",
+      "Strength": "3",
+      "Speed": "2",
+      "Durability": "3",
+      "Energy_Projection": "3",
+      "Fighting_Ability": "5"
+    },
+    {
+      "Name": "Agente 13",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/6/6c/Sharon_Carter_%28Earth-616%29_from_Captain_America_Sentinel_of_Liberty_Vol_2_11_001.jpg/revision/latest?cb=20230415234335",
+      "Intelligence": "3",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Star Lord",
+      "Image_Link": "https://static.wikia.nocookie.net/doblaje/images/d/d5/Star_Lord_Comic.png/revision/latest?cb=20150208213055&path-prefix=es",
+      "Intelligence": "4",
+      "Strength": "3",
+      "Speed": "2",
+      "Durability": "3",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Gamora",
+      "Image_Link": "https://www.zonanegativa.com/imagenes/2016/12/Gamora-00-01.jpg",
+      "Intelligence": "3",
+      "Strength": "3",
+      "Speed": "4",
+      "Durability": "3",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Drax",
+      "Image_Link": "https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2015/10/Drax-Destacada.jpg?resize=698%2C507&ssl=1",
+      "Intelligence": "2",
+      "Strength": "5",
+      "Speed": "2",
+      "Durability": "7",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Rocket Raccoon",
+      "Image_Link": "https://elcomercio.pe/resizer/qeDdEKo8bX-FIqQr4716YJY75Aw=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/ZE2IPLGKN5GGFFFBY2GMZQL7YY.png",
+      "Intelligence": "3",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "2",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Groot",
+      "Image_Link": "https://comicvine.gamespot.com/a/uploads/scale_small/12/124259/8618203-rco012_1653757738.jpg",
+      "Intelligence": "3",
+      "Strength": "7",
+      "Speed": "3",
+      "Durability": "4",
+      "Energy_Projection": "3",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Nébula",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/4/45/Nebula_Vol_1_1_Textless.jpg/revision/latest?cb=20210729032454",
+      "Intelligence": "4",
+      "Strength": "5",
+      "Speed": "2",
+      "Durability": "3",
+      "Energy_Projection": "6",
+      "Fighting_Ability": "4"
+    },
+    {
+      "Name": "Mantis",
+      "Image_Link": "https://e0.pxfuel.com/wallpapers/354/491/desktop-wallpaper-mantis-marvel-girls-mantis-marvel-marvel-dc-comics.jpg",
+      "Intelligence": "3",
+      "Strength": "3",
+      "Speed": "7",
+      "Durability": "7",
+      "Energy_Projection": "3",
+      "Fighting_Ability": "6"
+    },
+    {
+      "Name": "Fury",
+      "Image_Link": "https://assetsio.reedpopcdn.com/FURY2023001_Cov-header.jpg?width=880&quality=80&format=jpg&auto=webp",
+      "Intelligence": "7",
+      "Strength": "2",
+      "Speed": "2",
+      "Durability": "6",
+      "Energy_Projection": "1",
+      "Fighting_Ability": "7"
+    }
+  ]

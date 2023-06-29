@@ -31,8 +31,6 @@ export const ItemDetailContainer = () => {
 		getProductsById(id);
 	}, []);
 
-	//   return(
-
 	return (
 		<div>
 			{" "}
@@ -70,3 +68,4 @@ export const ItemDetailContainer = () => {
 		</div>
 	);
 };
+

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 const MarvelAPI = ({ currentPage }) => {
 	const [data, setData] = useState([]);
+	const [totalPages, setTotalPages] = useState();
+	const [offset, setOffset] = useState(0);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -13,18 +15,23 @@ const MarvelAPI = ({ currentPage }) => {
 			const hash = MD5(timestamp + privateKey + publicKey).toString();
 
 			const limit = 20; // Cantidad de personajes por solicitud
-			const offset = (currentPage - 1) * limit; // Calculo del offset
+			let internalOffset = offset;
+
+			let results = [];
 
 			try {
 				let response;
-				let results = [];
 				do {
-					const url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${offset}`;
+					const url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${internalOffset}`;
 
 					response = await axios.get(url);
 					const responseData = response.data?.data?.results || [];
 
-					console.log(responseData);
+					//calculo de total de paginas
+					// const totalCharacters = response.data?.data?.total;
+					// setTotalPages(Math.ceil(totalCharacters / limit));
+
+					setTotalPages(50) //implementacion temporaria hasta resolver como hacer el calculo excluyendo a los filtrados
 
 					const filteredData = responseData.filter(
 						(character) =>
@@ -36,9 +43,12 @@ const MarvelAPI = ({ currentPage }) => {
 					);
 
 					results = results.concat(filteredData);
+					internalOffset += limit;
 				} while (results.length < 20);
 
-				setData(results);
+				// const filteredResults = results.slice(0, 20);
+				setData(data.concat(results));
+				setOffset(internalOffset);
 			} catch (error) {
 				console.error("Error en la solicitud:", error);
 			}
@@ -47,7 +57,7 @@ const MarvelAPI = ({ currentPage }) => {
 		fetchData();
 	}, [currentPage]);
 
-	return { data };
+	return { data, totalPages };
 };
 
 export default MarvelAPI;

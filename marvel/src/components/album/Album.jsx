@@ -5,15 +5,15 @@ import { Spinner } from "../Spinner";
 
 export const Album = () => {
 	const [currentPage, setCurrentPage] = useState(1);
-	const { data } = MarvelAPI({ currentPage });
-	const [totalPages, setTotalPages] = useState(0);
+	const { data, totalPages } = MarvelAPI({ currentPage });
+	// const [totalPages, setTotalPages] = useState(0);
 
-	useEffect(() => {
-		if (data) {
-			const calculatedTotalPages = Math.ceil(data.length / 20);
-			setTotalPages(calculatedTotalPages);
-		}
-	}, [data]);
+	// useEffect(() => {
+	// 	if (data) {
+	// 		const calculatedTotalPages = Math.ceil(totalPages / 20);
+	// 		setTotalPages(calculatedTotalPages);
+	// 	}
+	// }, [data]);
 
 	const previousPage = () => {
 		if (currentPage > 1) {

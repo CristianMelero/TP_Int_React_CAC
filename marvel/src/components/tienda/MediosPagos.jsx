@@ -3,8 +3,8 @@
 export const MediosPagos = ()=>{
 
     return(
-        <div className="d-flex flex-column justify-content-center">
-            <h2 className="text-center m-3">Nuestros medios de pago</h2>
+        <div className=" container d-flex flex-column justify-content-center">
+            <h2 className="text-center m-3 bg-secondary text-light p-2">Nuestros medios de pago</h2>
                 
                 <div className="d-flex m-5 justify-content-center">
                     <img src="https://res.cloudinary.com/dcwondno7/image/upload/v1686879166/marvel/image-removebg-preview_tnhspw.png" alt="Medios de pago" width={"40%"} />

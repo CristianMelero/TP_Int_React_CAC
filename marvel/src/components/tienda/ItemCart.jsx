@@ -17,9 +17,9 @@ export const ItemCart = ({ item, quantity }) => {
 							<p className="p-3">{item.name}</p>
 						</div>
 					</th>
-					<td className="col-2 ">{}</td>
+					<td className="col-2 ">{item.quantity}</td>
 					<td className="col-2 ">$ {item.price}</td>
-					<td className="col-2"> $ {item.quanty * item.price}</td>
+					<td className="col-2"> $ {item.quantity * item.price}</td>
 					<td>
 						<button
 							onClick={() => removeItem(item)}

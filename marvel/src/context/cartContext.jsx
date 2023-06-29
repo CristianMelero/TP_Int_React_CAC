@@ -22,10 +22,10 @@ export const CartProvider = ({ children }) => {
 		setCart([]);
 	};
 	const totalPrice = () => {
-		return cart.reduce((count, item) => count + item.quanty * item.price,0,);
+		return cart.reduce((acum, item) => acum + item.quantity * item.price, 0);
 	};
 	const totalProducts = () => {
-		return cart.reduce((count, items) => count + items.quanty, 0);
+		return cart.reduce((acum, item) => acum + item.quantity, 0);
 	};
 
 	return (

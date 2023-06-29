@@ -1,9 +1,9 @@
 import "./CardDetail.css"
-import Swal from "sweetalert2"
-import { useContext, useState } from "react";
-import { CartContext } from '../../context/cartContext.jsx';
+ import { useContext, useState } from "react";
+ import { CartContext } from '../../context/cartContext.jsx';
 import { ItemCount } from "./ItemCount";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2"
 
 
 
@@ -11,24 +11,19 @@ import { Link } from "react-router-dom";
 
 export const CardDetail= ({item})=> {
     const { addToCart } = useContext(CartContext);
-    const [countCart, setCountCart] = useState([])
+    const [countCart, setCountCart] = useState([])  
     
     const onAdd = (quantity) => {
-
         addToCart(item, quantity);
-  
-  setCountCart(quantity)
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: `${quantity} ${item.name} agregados al carrito`,
-    showConfirmButton: false,
-    timer: 1500
-  })
-  
-    }
-    
-    
+        setCountCart(quantity)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `${quantity} ${item.name} agregados al carrito`,
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }    
 
     
 
@@ -41,11 +36,17 @@ export const CardDetail= ({item})=> {
                     <h3 className="card-title nameCard text-light">{item.name}</h3>
                     <h5 className="priceCard text-light">${item.price}</h5>
 
-                    <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
+                    <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>  
 
                     <Link to={`/detail/${item.id}`}>
-                        <a className="text-secondary mt-4" style={{width:"13rem", fontSize:"22px"}}>
-                            Ver detalles
+                        <a className=" mt-4" 
+                            style={{
+                                width:"13rem", 
+                                fontSize:"22px",
+                                color: "#ffff",
+                                textDecorationLine: "underline",
+                                }}>
+                            Ver detalles 
                         </a> 
                     </Link>
 

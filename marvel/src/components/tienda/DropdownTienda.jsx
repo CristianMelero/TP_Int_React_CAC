@@ -16,8 +16,9 @@ import {
 	DropdownItem,
 	NavbarText,
 } from "reactstrap";
+import { TotalItems } from "./TotalItems";
 
-export const DropdownTienda = () => {
+export const DropdownTienda = ({item}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
@@ -47,8 +48,12 @@ export const DropdownTienda = () => {
 								Productos
 							</DropdownToggle>
 							<DropdownMenu>
+								<Link to={`/category/`}> 
 								<DropdownItem>Funko Pop!</DropdownItem>
+								</Link>
+								<Link to={`/category/`}> 
 								<DropdownItem>Muñecos articulados</DropdownItem>
+								</Link>
 								<DropdownItem>Remeras</DropdownItem>
 								<DropdownItem>Gorras</DropdownItem>
 							</DropdownMenu>
@@ -59,6 +64,7 @@ export const DropdownTienda = () => {
 								size={2}
 								color={"white"}
 							/>
+							<TotalItems/>
 						</Link>
 					</Nav>
 				</Collapse>

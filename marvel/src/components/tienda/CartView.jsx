@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext.jsx";
 import Icon from "@mdi/react";
-import { mdiCartVariant, mdiCartOff, mdiCartArrowRight } from "@mdi/js";
+import { mdiCartVariant, mdiCartOff, mdiCartArrowRight, mdiDeleteEmpty } from "@mdi/js";
 import { ItemCart } from "./ItemCart.jsx";
 import { Link } from "react-router-dom";
 
 export const CartView = () => {
-	const { cart, totalProducts, totalPrice } = useContext(CartContext);
+	const { cart, totalProducts, totalPrice, removeAll } = useContext(CartContext);
 
 	return (
 		<div>
@@ -49,6 +49,7 @@ export const CartView = () => {
 									</tr>
 								</thead>
 							</table>
+							<div className="pb-5">
 							<h5 className="d-grid gap-2 d-md-flex justify-content-center mb-5 ">
 								<strong>Total: $ {totalPrice()} </strong>
 							</h5>
@@ -64,7 +65,17 @@ export const CartView = () => {
 										Continuar comprando
 									</a>
 								</Link>
+								<button className="btn btn-secondary position-absolute mt-2 start-50 btn-sm translate-middle-x " 
+										style={{ width:"8rem"}}
+										onClick={()=> removeAll()}
+								>
+									<Icon path={mdiDeleteEmpty} size={1} />Vaciar Carrito
+								</button>
 							</div>
+							</div>
+							
+							
+							
 						</div>
 						<div className="col-lg-5 col-md-12">
 							{/* <UserForm/> */}

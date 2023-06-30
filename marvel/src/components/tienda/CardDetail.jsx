@@ -7,8 +7,6 @@ import Swal from "sweetalert2"
 
 
 
-
-
 export const CardDetail= ({item})=> {
     const { addToCart } = useContext(CartContext);
     const [countCart, setCountCart] = useState([])  

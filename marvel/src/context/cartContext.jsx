@@ -4,15 +4,20 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
-	const addToCart = (product)=> {
+	const addToCart = (product, quantity)=> {
+
+		console.log(quantity);
         
         const repeatProduct = cart.find((item) => item.id === product.id);
 
         if(repeatProduct){
-            setCart(cart.map((item)=> item.id === product.id ? {...item, quanty: repeatProduct.quanty +1} : item))
+            setCart(cart.map((item)=> item.id === product.id ? {...item, quanty: repeatProduct.quanty += quantity} : item))
         }else{
-            setCart([...cart, product])
+            setCart([...cart, {...product, quanty: quantity}])
         }
+
+		console.log(cart);
+		
     };
 
 	const removeItem = (itemRemove) => {
@@ -22,10 +27,10 @@ export const CartProvider = ({ children }) => {
 		setCart([]);
 	};
 	const totalPrice = () => {
-		return cart.reduce((acum, item) => acum + item.quantity * item.price, 0);
+		return cart.reduce((acum, item) => acum + item.quanty * item.price, 0);
 	};
 	const totalProducts = () => {
-		return cart.reduce((acum, item) => acum + item.quantity, 0);
+		return cart.reduce((acum, item) => acum + item.quanty, 0);
 	};
 
 	return (

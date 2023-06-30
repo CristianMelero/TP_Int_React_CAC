@@ -17,8 +17,6 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         setCount(parseInt(initial));
     }, [initial])
 
-
-
   return (
     <div className='d-flex flex-column'>
         <div className='d-flex justify-content-center'>

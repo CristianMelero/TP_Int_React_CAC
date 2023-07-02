@@ -2,9 +2,15 @@ import { useNavigate } from "react-router-dom";
 import "./Buscador.css";
 import { useState } from "react";
 
-export const Buscador = ({ setSearchText }) => {
+export const Buscador = ({setCurrentPage}) => {
+	const [searchText, setSearchText] = useState("");
+
+	const navigate = useNavigate();
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		navigate(`?search=${searchText}`);
+		setCurrentPage(1);
 	};
 
 	return (
@@ -13,11 +19,11 @@ export const Buscador = ({ setSearchText }) => {
 				<input
 					className="buscadorInput"
 					type="text"
-					// value={searchText}
+					value={searchText}
 					onChange={(e) => setSearchText(e.target.value)}
 				/>
 				<button className="buscadorButton" type="submit">
-					Buscar
+					BUSCAR
 				</button>
 			</div>
 		</form>

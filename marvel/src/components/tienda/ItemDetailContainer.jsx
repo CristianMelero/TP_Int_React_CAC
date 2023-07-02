@@ -2,6 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
+import { Spinner } from "../Spinner";
 // import { ItemCount } from "./ItemCount";
 // import { CartContext } from '../../context/cartContext.jsx';
 // import Swal from "sweetalert2"
@@ -13,10 +14,12 @@ export const ItemDetailContainer = ({ item }) => {
 	const [price, setPrice] = useState(0);
 	const [detail, setDetail] = useState("");
 	const [img, setImg] = useState("");
+	const [cargando, setCargando] = useState(true);
 
 	const { id } = useParams();
 
 	const getProductsById = async (id) => {
+		setCargando(true);
 		const productDoc = await getDoc(doc(db, "products", id));
 
 		if (productDoc.exists()) {
@@ -25,6 +28,7 @@ export const ItemDetailContainer = ({ item }) => {
 			setPrice(productDoc.data().price);
 			setDetail(productDoc.data().detail);
 			setImg(productDoc.data().img);
+			setCargando(false);
 		} else {
 			console.log("El producto no existe");
 		}
@@ -33,6 +37,10 @@ export const ItemDetailContainer = ({ item }) => {
 	useEffect(() => {
 		getProductsById(id);
 	}, []);
+
+	if (cargando) {
+		return <Spinner />;
+	}
 
 	// const [countCart, setCountCart] = useState([])
 
@@ -60,11 +68,7 @@ export const ItemDetailContainer = ({ item }) => {
 				</div>
 				<div className="card-body d-flex align-items-center justify-content-center">
 					<div>
-						<img
-							width={"40%"}
-							src={img}
-							alt={name}
-						/>
+						<img width={"40%"} src={img} alt={name} />
 					</div>
 					<div>
 						<p className="card-text"> {detail} </p>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Icon from "@mdi/react";
 import { mdiCartVariant } from "@mdi/js";
 import {
@@ -9,7 +9,6 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
@@ -18,7 +17,7 @@ import {
 } from "reactstrap";
 import { TotalItems } from "./TotalItems";
 
-export const DropdownTienda = ({item}) => {
+export const DropdownTienda = ({ item }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
@@ -30,32 +29,44 @@ export const DropdownTienda = ({item}) => {
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="mr-auto" navbar>
 						<NavItem>
-							<Link to="/" className="text-decoration-none">
-								<NavLink className="text-light">Inicio</NavLink>
-							</Link>
+							<NavLink
+								to="/mediosdepago"
+								className="text-light text-decoration-none nav-link">
+								Inicio
+							</NavLink>
 						</NavItem>
 						<NavItem>
-							<Link
+							<NavLink
 								to="/mediosdepago"
-								className="text-decoration-none">
-								<NavLink className="text-light">
-									Medios de pago
-								</NavLink>
-							</Link>
+								className="text-light text-decoration-none nav-link">
+								Medios de pago
+							</NavLink>
 						</NavItem>
 						<UncontrolledDropdown nav inNavbar>
 							<DropdownToggle nav caret className="text-light">
 								Productos
 							</DropdownToggle>
 							<DropdownMenu>
-								<Link to={`/category/`}> 
-								<DropdownItem>Funko Pop!</DropdownItem>
-								</Link>
-								<Link to={`/category/`}> 
-								<DropdownItem>Muñecos articulados</DropdownItem>
-								</Link>
-								<DropdownItem>Remeras</DropdownItem>
-								<DropdownItem>Gorras</DropdownItem>
+								<NavLink
+									to={`/category/`}
+									className="dropdown-item">
+									Funko Pop!
+								</NavLink>
+								<NavLink
+									to={`/category/`}
+									className="dropdown-item">
+									Muñecos articulados
+								</NavLink>
+								<NavLink
+									to={`/category/`}
+									className="dropdown-item">
+									Remeras
+								</NavLink>
+								<NavLink
+									to={`/category/`}
+									className="dropdown-item">
+									Gorras
+								</NavLink>
 							</DropdownMenu>
 						</UncontrolledDropdown>
 						<Link to="/cart" className=" position-absolute end-0">
@@ -64,7 +75,7 @@ export const DropdownTienda = ({item}) => {
 								size={2}
 								color={"white"}
 							/>
-							<TotalItems/>
+							<TotalItems />
 						</Link>
 					</Nav>
 				</Collapse>

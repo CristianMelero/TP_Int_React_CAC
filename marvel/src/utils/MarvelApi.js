@@ -2,19 +2,21 @@ import axios from "axios";
 import { MD5 } from "crypto-js";
 import { useEffect, useState } from "react";
 
-const MarvelAPI = ({ currentPage }) => {
+const publicKey = "8770fe34d3812c4e1b5800c8bbfd9ea8";
+const privateKey = "f41e3e8cfd0dda339ddd4d25ea6045596ecefa6b";
+const timestamp = new Date().getTime().toString();
+const hash = MD5(timestamp + privateKey + publicKey).toString();
+const limit = 20; // Cantidad de personajes por solicitud
+const API = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`;
+
+const MarvelAPI = ({ currentPage, searchText }) => {
 	const [data, setData] = useState([]);
-	const [totalPages, setTotalPages] = useState();
+	// const [totalPages, setTotalPages] = useState(); //reactivar esto si se soluciona lo de las pags
 	const [offset, setOffset] = useState(0);
+	const totalPages = 50 //implementacion temporaria hasta resolver como hacer el calculo excluyendo a los filtrados
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const publicKey = "8770fe34d3812c4e1b5800c8bbfd9ea8";
-			const privateKey = "f41e3e8cfd0dda339ddd4d25ea6045596ecefa6b";
-			const timestamp = new Date().getTime().toString();
-			const hash = MD5(timestamp + privateKey + publicKey).toString();
-
-			const limit = 20; // Cantidad de personajes por solicitud
 			let internalOffset = offset;
 
 			let results = [];
@@ -22,16 +24,19 @@ const MarvelAPI = ({ currentPage }) => {
 			try {
 				let response;
 				do {
-					const url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${internalOffset}`;
+					let url = API + `&offset=${internalOffset}`;
+
+					if (searchText) {
+						const searchParam = `&nameStartsWith=${encodeURIComponent(searchText)}`;
+						url += searchParam;
+					  }			
 
 					response = await axios.get(url);
 					const responseData = response.data?.data?.results || [];
 
-					//calculo de total de paginas
+					//CALCULO TOTAL DE PAGINAS
 					// const totalCharacters = response.data?.data?.total;
 					// setTotalPages(Math.ceil(totalCharacters / limit));
-
-					setTotalPages(50) //implementacion temporaria hasta resolver como hacer el calculo excluyendo a los filtrados
 
 					const filteredData = responseData.filter(
 						(character) =>
@@ -46,7 +51,6 @@ const MarvelAPI = ({ currentPage }) => {
 					internalOffset += limit;
 				} while (results.length < 20);
 
-				// const filteredResults = results.slice(0, 20);
 				setData(data.concat(results));
 				setOffset(internalOffset);
 			} catch (error) {
@@ -55,47 +59,10 @@ const MarvelAPI = ({ currentPage }) => {
 		};
 
 		fetchData();
-	}, [currentPage]);
+	}, [currentPage, searchText]);
 
 	return { data, totalPages };
 };
 
 export default MarvelAPI;
 
-//CODIGO ORIGINAL
-// import axios from "axios";
-// import { MD5 } from "crypto-js";
-// import React, { useEffect, useState } from "react";
-
-// const MarvelAPI = ({ currentPage }) => {
-// 	const [data, setData] = useState(null);
-// 	const limit = 20; // Cantidad de personajes por página
-
-// 	useEffect(() => {
-// 		const fetchData = async () => {
-// 			const publicKey = "8770fe34d3812c4e1b5800c8bbfd9ea8";
-// 			const privateKey = "f41e3e8cfd0dda339ddd4d25ea6045596ecefa6b";
-// 			const timestamp = new Date().getTime().toString();
-// 			const hash = MD5(timestamp + privateKey + publicKey).toString();
-
-// 			const offset = (currentPage - 1) * limit;
-// 			const url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${offset}`;
-
-// 			try {
-// 				const response = await axios.get(url);
-// 				setData(response.data);
-// 			} catch (error) {
-// 				console.error("Error en la solicitud:", error);
-// 			}
-// 		};
-
-// 		fetchData();
-// 	}, [currentPage]);
-
-// 	const totalCharacters = data?.data?.total || 0;
-// 	const totalPages = Math.ceil(totalCharacters / limit);
-
-// 	return { data, totalPages };
-// };
-
-// export default MarvelAPI;

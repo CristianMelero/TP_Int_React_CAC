@@ -1,13 +1,12 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
 // import { ItemCount } from "./ItemCount";
 // import { CartContext } from '../../context/cartContext.jsx';
 // import Swal from "sweetalert2"
 
-export const ItemDetailContainer = ( {item} ) => {
-
+export const ItemDetailContainer = ({ item }) => {
 	// const { addToCart } = useContext(CartContext);
 
 	const [name, setName] = useState("");
@@ -18,11 +17,10 @@ export const ItemDetailContainer = ( {item} ) => {
 	const { id } = useParams();
 
 	const getProductsById = async (id) => {
-
 		const productDoc = await getDoc(doc(db, "products", id));
 
 		if (productDoc.exists()) {
-            console.log("funciona");
+			console.log("funciona");
 			setName(productDoc.data().name);
 			setPrice(productDoc.data().price);
 			setDetail(productDoc.data().detail);
@@ -36,33 +34,37 @@ export const ItemDetailContainer = ( {item} ) => {
 		getProductsById(id);
 	}, []);
 
-	
-    
 	// const [countCart, setCountCart] = useState([])
-    
-    // const onAdd = (quantity) => {
 
-    //     addToCart(item, quantity);
+	// const onAdd = (quantity) => {
 
-    //     setCountCart(quantity)
-    //     Swal.fire({
-    //         position: 'center',
-    //         icon: 'success',
-    //         title: `${quantity} ${item.name} agregados al carrito`,
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     })
-    // }
+	//     addToCart(item, quantity);
+
+	//     setCountCart(quantity)
+	//     Swal.fire({
+	//         position: 'center',
+	//         icon: 'success',
+	//         title: `${quantity} ${item.name} agregados al carrito`,
+	//         showConfirmButton: false,
+	//         timer: 1500
+	//     })
+	// }
 
 	return (
-		<div className="container mt-4 mb-4" >
+		<div className="container mt-4 mb-4">
 			<div className="card text-center ">
-				<div className="card-header" style={{fontSize:"1.5rem", textTransform:"uppercase"}}>
+				<div
+					className="card-header"
+					style={{ fontSize: "1.5rem", textTransform: "uppercase" }}>
 					<strong>{name}</strong>
 				</div>
 				<div className="card-body d-flex align-items-center justify-content-center">
 					<div>
-						<img width={"40%"} src={img} alt={name} />
+						<img
+							width={"40%"}
+							src={img}
+							alt={name}
+						/>
 					</div>
 					<div>
 						<p className="card-text"> {detail} </p>
@@ -71,9 +73,14 @@ export const ItemDetailContainer = ( {item} ) => {
 						</p>
 						{/* <ItemCount initial={1} stock={item.stock} onAdd={onAdd()}/>  */}
 						<Link to="/cart">
-						<button  className="btn " style={{color: "#fff", backgroundColor:"coral"}}>
-							COMPRAR
-						</button>
+							<button
+								className="btn "
+								style={{
+									color: "#fff",
+									backgroundColor: "coral",
+								}}>
+								COMPRAR
+							</button>
 						</Link>
 					</div>
 				</div>
@@ -90,7 +97,6 @@ export const ItemDetailContainer = ( {item} ) => {
 					</Link>
 				</div>
 			</div>
-			
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {CartProvider} from "./context/cartContext"
+import { CartProvider } from "./context/cartContext";
 import { Header } from "./components/Header";
 import { Inicio } from "./components/Inicio";
 import { Album } from "./components/album/Album";
@@ -23,29 +23,34 @@ function App() {
 	return (
 		<>
 			<CartProvider>
-			<BrowserRouter>
-				<Header />
-				<Routes>
-					<Route path="/" element={<Inicio />} />
-					<Route path="/album" element={<Album />} />
-					<Route path="/juego" element={<Juego />} />
-					<Route path="/contacto" element={<Contacto />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/mapa" element={<MapaSitio />} />
-					<Route path="/links_interes" element={<LinksInteres />} />
-					<Route path="/tienda" element={<Tienda />} />
-					<Route path="/nosotros" element={<Nosotros />} />
-					<Route path="/create" element={<Create/>}></Route>
-					<Route path="/edit/:id" element={<Edit/>}></Route>
-					<Route path="/noticia/:id" element={<Noticia/>}></Route>
-					<Route path="/noticia/:id" element={<Noticia/>}></Route>
-					<Route path="/cart" element={<CartView/>}></Route>
-					<Route path="/detail/:id" element={<ItemDetailContainer/>}></Route>
-					
-					<Route path="/mediosdepago" element={<MediosPagos/>}></Route>
-				</Routes>
-				<Footer />
-			</BrowserRouter>
+				<BrowserRouter>
+					<Header />
+					<Routes>
+						<Route path="/" element={<Inicio />} />
+						<Route path="/album" element={<Album />} />
+						<Route path="/juego" element={<Juego />} />
+						<Route path="/contacto" element={<Contacto />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/mapa" element={<MapaSitio />} />
+						<Route
+							path="/links_interes"
+							element={<LinksInteres />}
+						/>
+						<Route path="/tienda" element={<Tienda />} />
+						<Route path="/nosotros" element={<Nosotros />} />
+						<Route path="/create" element={<Create />} />
+						<Route path="/edit/:id" element={<Edit />} />
+						<Route path="/noticia/:id" element={<Noticia />} />
+						<Route path="/noticia/:id" element={<Noticia />} />
+						<Route path="/cart" element={<CartView />} />
+						<Route
+							path="/detail/:id"
+							element={<ItemDetailContainer />}
+						/>
+						<Route path="/mediosdepago" element={<MediosPagos />} />
+					</Routes>
+					<Footer />
+				</BrowserRouter>
 			</CartProvider>
 		</>
 	);

@@ -5,6 +5,7 @@ import { get } from "../../utils/MarvelApi";
 import { Spinner } from "../Spinner";
 import { Buscador } from "./Buscador";
 import { Paginacion } from "./Paginacion";
+import "./Album.css";
 
 export const Album = () => {
 	const [characters, setCharacters] = useState([]);
@@ -42,12 +43,18 @@ export const Album = () => {
 	}
 
 	return (
-		<>
-			<Container>
-				<h1>
-					<b>ÁLBUM</b>
-				</h1>
-				<Buscador setCurrentPage={setCurrentPage} />
+		<div className="album" >
+			<div className="d-flex justify-content-around align-items-center p-5">
+				<div>
+					<h1>
+						<b>ÁLBUM</b>
+					</h1>
+				</div>
+				<div>
+					<Buscador setCurrentPage={setCurrentPage} />
+				</div>
+			</div>
+			<Container className="album" >
 				<Row>
 					{characters.map((character) => (
 						<Col key={character.id} sm={6} md={4} lg={3}>
@@ -64,14 +71,14 @@ export const Album = () => {
 						</Col>
 					))}
 				</Row>
-			</Container>
+			</Container >
 
 			<Paginacion
 				currentPage={currentPage}
 				totalPages={totalPages}
 				setCurrentPage={setCurrentPage}
 			/>
-		</>
+		</div>
 	);
 };
 

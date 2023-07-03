@@ -26,7 +26,8 @@ export const Paginacion = ({ currentPage, totalPages, setCurrentPage }) => {
 	};
 
 	return (
-		<Pagination>
+		<Pagination
+			className="justify-content-center pagination-lg m-0 p-4">
 			{/* <Pagination.First onClick={firstPage} disabled={currentPage === 1} /> */}
 			<Pagination.Prev
 				onClick={previousPage}

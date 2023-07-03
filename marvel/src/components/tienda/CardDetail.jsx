@@ -9,6 +9,8 @@ export const CardDetail = ({ item }) => {
 	const { addToCart } = useContext(CartContext);
 	const [countCart, setCountCart] = useState([]);
 
+	//Suma de item
+	
 	const onAdd = (quantity) => {
 		addToCart(item, quantity);
 		setCountCart(quantity);
@@ -28,7 +30,7 @@ export const CardDetail = ({ item }) => {
 				style={{ width: "18rem" }}>
 				<img
 					src={item.img}
-					className="card-img-top p-4 rounded mx-auto d-block"
+					className="imgCardcard-img-top p-4 rounded mx-auto d-block"
 					alt={item.name}
 					style={{ maxHeight: "345px", width: "auto" }}
 				/>

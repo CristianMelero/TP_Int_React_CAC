@@ -2,12 +2,11 @@ import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
-// import { ItemCount } from "./ItemCount";
-// import { CartContext } from '../../context/cartContext.jsx';
-// import Swal from "sweetalert2"
+
 
 export const ItemDetailContainer = ({ item }) => {
-	// const { addToCart } = useContext(CartContext);
+	
+	//Vista del detalle del producto
 
 	const [name, setName] = useState("");
 	const [price, setPrice] = useState(0);
@@ -34,21 +33,7 @@ export const ItemDetailContainer = ({ item }) => {
 		getProductsById(id);
 	}, []);
 
-	// const [countCart, setCountCart] = useState([])
 
-	// const onAdd = (quantity) => {
-
-	//     addToCart(item, quantity);
-
-	//     setCountCart(quantity)
-	//     Swal.fire({
-	//         position: 'center',
-	//         icon: 'success',
-	//         title: `${quantity} ${item.name} agregados al carrito`,
-	//         showConfirmButton: false,
-	//         timer: 1500
-	//     })
-	// }
 
 	return (
 		<div className="container mt-4 mb-4">

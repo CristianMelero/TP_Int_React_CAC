@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 export const ItemCount = ({ initial, stock, onAdd }) => {
 	const [count, setCount] = useState(parseInt(initial));
 
+	//Contador
+
 	const handleDecrement = () => {
 		setCount(count - 1);
 	};

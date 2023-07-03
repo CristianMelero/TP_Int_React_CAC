@@ -3,6 +3,8 @@ import { useContext } from "react";
 
 export const TotalItems = () => {
 
+  //Icono carrito y suma de unidades
+
     const { cart } = useContext(CartContext);
 
     const itemsQuanty = cart.reduce((acum, elem) => acum + elem.quanty, 0)

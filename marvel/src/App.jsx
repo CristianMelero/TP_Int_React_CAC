@@ -7,7 +7,9 @@ import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
 import { Juego } from "./components/Juego";
 import { LinksInteres } from "./components/LinksInteres";
-import { Login } from "./components/Login";
+import { Login } from "./components/autenticación/Login";
+import { Register } from "./components/autenticación/Register";
+import { Reset } from "./components/autenticación/Reset";
 import { MapaSitio } from "./components/MapaSitio";
 import { Nosotros } from "./components/Nosotros";
 import { Tienda } from "./components/tienda/Tienda";
@@ -48,6 +50,9 @@ function App() {
 							element={<ItemDetailContainer />}
 						/>
 						<Route path="/mediosdepago" element={<MediosPagos />} />
+						<Route path="/login" element={<Login/>}/>
+						<Route path="/register" element={<Register/>}/>
+						<Route path="/reset" element={<Reset/>}/>
 					</Routes>
 					<Footer />
 				</BrowserRouter>

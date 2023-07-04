@@ -1,15 +1,14 @@
-import { collection, getDocs} from "firebase/firestore";
-import { useEffect, useState } from "react"
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { CardDetail } from "./CardDetail";
 import { db } from "../../firebaseConfig/firebase";
-import "./ItemsList.css"
 import { useParams } from "react-router-dom";
+import { Spinner } from "../Spinner";
+import "./ItemsList.css";
 
-
-export const ItemsList = ()=> {
-
-    const [items, setItems] = useState([]);
-
+export const ItemsList = () => {
+	const [cargando, setCargando] = useState(true);
+	const [items, setItems] = useState([]);
     const [name, setName] = useState("");
 	const [price, setPrice] = useState(0);
 	const [detail, setDetail] = useState("");
@@ -20,15 +19,19 @@ export const ItemsList = ()=> {
     //const q = query(itemsCollection, where('category', "==", categoryId ))
     
     //Lista de productos de Firebase
+	const getProducts = async () => {
+		const data = await getDocs(itemsCollection);
+		setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        setCargando(false)
+	};
 
-    const getProducts = async() =>{
-        const data = await getDocs(itemsCollection)
+    useEffect(() => {
+		getProducts();
+	}, []);
 
-        setItems(
-            data.docs.map((doc)=>({...doc.data(), id:doc.id}))
-        )
-        
-    }
+	if (cargando) {
+		return <Spinner />;
+	}
 
 // Filtro por categorias
 
@@ -55,19 +58,11 @@ export const ItemsList = ()=> {
     //    }
 	// }, [categoryId]);
 
-       useEffect(()=>{
-           getProducts()
-       }, []);
-
-    return(
-
-        <ul className="itemsGrid container"> 
-            {items.map((item)=>(
-            <CardDetail 
-                key={item.id}
-                item={item}
-            />
-        ))}
-    </ul>
-    )
-}
+	return (
+		<ul className="itemsGrid container" style={{marginBottom: "0"}}>
+			{items.map((item) => (
+				<CardDetail key={item.id} item={item} />
+			))}
+		</ul>
+	);
+};

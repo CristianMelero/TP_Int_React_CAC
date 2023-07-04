@@ -2,26 +2,21 @@ import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
-import { DropdownTienda } from "./DropdownTienda";
-//import { ItemCount } from "./ItemCount";
 
 
-
-export const ItemDetailContainer = () => {
-
-	
-
+export const ItemDetailContainer = ({ item }) => {
 	
 	//Vista del detalle del producto
-
 	const [name, setName] = useState("");
 	const [price, setPrice] = useState(0);
 	const [detail, setDetail] = useState("");
 	const [img, setImg] = useState("");
+	const [cargando, setCargando] = useState(true);
 
 	const { id } = useParams();
 
 	const getProductsById = async (id) => {
+		setCargando(true);
 		const productDoc = await getDoc(doc(db, "products", id));
 
 		if (productDoc.exists()) {
@@ -30,6 +25,7 @@ export const ItemDetailContainer = () => {
 			setPrice(productDoc.data().price);
 			setDetail(productDoc.data().detail);
 			setImg(productDoc.data().img);
+			setCargando(false);
 		} else {
 			console.log("El producto no existe");
 		}
@@ -39,7 +35,9 @@ export const ItemDetailContainer = () => {
 		getProductsById(id);
 	}, []);
 
-
+	if (cargando) {
+		return <Spinner />;
+	}
 
 	return (
 		<>
@@ -55,11 +53,7 @@ export const ItemDetailContainer = () => {
 				</div>
 				<div className="card-body d-flex align-items-center justify-content-center">
 					<div>
-						<img
-							width={"40%"}
-							src={img}
-							alt={name}
-						/>
+						<img width={"40%"} src={img} alt={name} />
 					</div>
 					<div>
 						<p className="card-text"> {detail} </p>

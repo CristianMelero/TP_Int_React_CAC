@@ -11,10 +11,12 @@ export const CharacterCard = ({ character }) => {
 					variant="top"
 					src={imgURL}
 					alt={character.name}
-					style={{ maxHeight: "300px" }}
+					style={{ height: "300px", objectFit: "cover" }}
 				/>
 				<Card.Body>
-					<Card.Title>{character.name}</Card.Title>
+					<Card.Title
+						style={{ height: "40px" }}
+					>{character.name}</Card.Title>
 				</Card.Body>
 			</Link>
 		</Card>

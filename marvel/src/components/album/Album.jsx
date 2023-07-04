@@ -5,7 +5,9 @@ import { get } from "../../utils/MarvelApi";
 import { Spinner } from "../Spinner";
 import { Buscador } from "./Buscador";
 import { Paginacion } from "./Paginacion";
+import CharacterNotFound from "./manage404";
 import "./Album.css";
+import { CharacterCard } from "./CharacterCard";
 
 export const Album = () => {
 	const [characters, setCharacters] = useState([]);
@@ -26,9 +28,9 @@ export const Album = () => {
 		setCargando(true);
 		let path;
 		if (search) {
-			path = `&offset=${offset}&nameStartsWith=` + search;
+			path = `?offset=${offset}&nameStartsWith=` + search;
 		} else {
-			path = `&offset=${offset}`;
+			path = `?offset=${offset}`;
 		}
 		get(path).then((data) => {
 			setCharacters(data.data.results);
@@ -43,7 +45,7 @@ export const Album = () => {
 	}
 
 	return (
-		<div className="album" >
+		<div className="album">
 			<div className="d-flex justify-content-around align-items-center p-5">
 				<div>
 					<h1>
@@ -54,30 +56,29 @@ export const Album = () => {
 					<Buscador setCurrentPage={setCurrentPage} />
 				</div>
 			</div>
-			<Container className="album" >
-				<Row>
-					{characters.map((character) => (
-						<Col key={character.id} sm={6} md={4} lg={3}>
-							<Card>
-								<Card.Img
-									variant="top"
-									src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-									style={{ maxHeight: "300px" }}
-								/>
-								<Card.Body>
-									<Card.Title>{character.name}</Card.Title>
-								</Card.Body>
-							</Card>
-						</Col>
-					))}
-				</Row>
-			</Container >
-
-			<Paginacion
-				currentPage={currentPage}
-				totalPages={totalPages}
-				setCurrentPage={setCurrentPage}
-			/>
+			{characters.length !== 0 ? (
+				<>
+					<Container>
+						<Row>
+							{characters.map((character) => (
+								<Col key={character.id} sm={6} md={4} lg={3}>
+									<CharacterCard
+										key={character.id}
+										character={character}
+									/>
+								</Col>
+							))}
+						</Row>
+					</Container>
+					<Paginacion
+						currentPage={currentPage}
+						totalPages={totalPages}
+						setCurrentPage={setCurrentPage}
+					/>
+				</>
+			) : (
+				<CharacterNotFound />
+			)}
 		</div>
 	);
 };

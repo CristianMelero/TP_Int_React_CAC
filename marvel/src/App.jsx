@@ -18,6 +18,7 @@ import "./styles.css";
 import { CartView } from "./components/tienda/CartView";
 import { MediosPagos } from "./components/tienda/MediosPagos";
 import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
+import { CharacterDetail } from "./components/album/PersonajeDetalle";
 
 function App() {
 	return (
@@ -28,6 +29,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Inicio />} />
 						<Route path="/album" element={<Album />} />
+						<Route path="/character/:characterId" element={<CharacterDetail />} />
 						<Route path="/juego" element={<Juego />} />
 						<Route path="/contacto" element={<Contacto />} />
 						<Route path="/login" element={<Login />} />

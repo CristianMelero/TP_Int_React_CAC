@@ -10,7 +10,6 @@ export const CardDetail = ({ item }) => {
 	const [countCart, setCountCart] = useState([]);
 
 	//Suma de item
-	
 	const onAdd = (quantity) => {
 		addToCart(item, quantity);
 		setCountCart(quantity);

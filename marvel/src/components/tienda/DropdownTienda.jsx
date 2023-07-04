@@ -69,9 +69,6 @@ export const DropdownTienda = ({ item }) => {
 								</NavLink>
 							</DropdownMenu>
 						</UncontrolledDropdown>
-
-						//Icono carrito y suma de productos
-
 						<Link to="/cart" className=" position-absolute end-0">
 							<Icon
 								path={mdiCartVariant}

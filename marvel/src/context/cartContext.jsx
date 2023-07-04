@@ -20,15 +20,27 @@ export const CartProvider = ({ children }) => {
 		
     };
 
+
+	//Eliminar item
+
 	const removeItem = (itemRemove) => {
 		setCart(cart.filter((cartItem) => cartItem.id !== itemRemove.id));
 	};
+
+	//Vacias carrito
+
 	const removeAll = () => {
 		setCart([]);
 	};
+
+	//Precio total
+
 	const totalPrice = () => {
 		return cart.reduce((acum, item) => acum + item.quanty * item.price, 0);
 	};
+
+	//Total de productos 
+	
 	const totalProducts = () => {
 		return cart.reduce((acum, item) => acum + item.quanty, 0);
 	};

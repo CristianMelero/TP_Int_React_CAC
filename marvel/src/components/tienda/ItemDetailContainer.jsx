@@ -2,9 +2,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
-import { Spinner } from "../Spinner";
+
 
 export const ItemDetailContainer = ({ item }) => {
+	
 	//Vista del detalle del producto
 	const [name, setName] = useState("");
 	const [price, setPrice] = useState(0);
@@ -39,6 +40,10 @@ export const ItemDetailContainer = ({ item }) => {
 	}
 
 	return (
+		<>
+		<nav className="container-fluid" style={{backgroundColor:"coral"}}>
+			<DropdownTienda/>
+			</nav>
 		<div className="container mt-4 mb-4">
 			<div className="card text-center ">
 				<div
@@ -55,16 +60,10 @@ export const ItemDetailContainer = ({ item }) => {
 						<p className="card-text">
 							<strong>$ {price} </strong>
 						</p>
-						{/* <ItemCount initial={1} stock={item.stock} onAdd={onAdd()}/>  */}
+						
 						<Link to="/cart">
-							<button
-								className="btn "
-								style={{
-									color: "#fff",
-									backgroundColor: "coral",
-								}}>
-								COMPRAR
-							</button>
+							<button>Agregar al carrito</button>
+						{/* <ItemCount initial={1}  onAdd={()=>onAdd(item)} /> */}
 						</Link>
 					</div>
 				</div>
@@ -82,5 +81,6 @@ export const ItemDetailContainer = ({ item }) => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };

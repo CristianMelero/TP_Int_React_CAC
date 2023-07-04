@@ -1,17 +1,60 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
+import {
+  getAuth, createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC6GpT6k3TkW_EV5CqaQiQZhoJCMwADDeg",
-  authDomain: "marvel-cac-23307.firebaseapp.com",
-  projectId: "marvel-cac-23307",
-  storageBucket: "marvel-cac-23307.appspot.com",
-  messagingSenderId: "177367384237",
-  appId: "1:177367384237:web:0d6c0c60dc0f71e916c624"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
+
+const registerWithEmailAndPassword = async (email, password) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(db, "users"), {
+      uid: user.uid,
+      authProvider: "local",
+      email,
+      password
+    });
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const logInWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const sendPasswordReset = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Password reset link sent!");
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const logout = () => {
+  signOut(auth);
 };
 
 // Initialize Firebase
@@ -19,5 +62,18 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-export { app, db }
+const auth = getAuth(app);
+
+//const sing=getsing
+
+export {
+  app,
+  db,
+  auth,
+  registerWithEmailAndPassword,
+  logInWithEmailAndPassword,
+  sendPasswordReset,
+  logout,
+}
+
 

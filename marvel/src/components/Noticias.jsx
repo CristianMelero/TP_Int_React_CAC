@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card } from "react-bootstrap/";
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebaseConfig/firebase.js';
+import { auth, db } from '../firebaseConfig/firebase.js';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const Noticias = () => {
+	const [user, loading] = useAuthState(auth);
 
 	const [noticias, setNoticias] = useState([])
 	const noticiasCollection = collection(db, 'noticias')
@@ -21,6 +23,12 @@ export const Noticias = () => {
 			}))
 		)
 		console.log(noticias);
+	}
+
+	if (user?.email == "administrador@ejemplo.com") {
+        var publicar_noticia = <Link to="/create" className="noticiabtn"><Button variant="warning">Publicar nueva noticia</Button></Link>
+    } else {
+		var publicar_noticia = ''
 	}
 
 	useEffect(() => {
@@ -43,7 +51,7 @@ export const Noticias = () => {
 				))}
 				<br></br>
 			</div>
-			<Link to="/create" className="noticiabtn"><Button variant="warning">Publicar nueva noticia</Button></Link>
+			{publicar_noticia}
 			<br></br>
 		</>
 	);

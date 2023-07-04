@@ -48,7 +48,7 @@ export const DropdownTienda = ({ item }) => {
 							</DropdownToggle>
 							<DropdownMenu>
 								<NavLink
-									to={`/category/`}
+									to={`/category/:category`}
 									className="dropdown-item">
 									Funko Pop!
 								</NavLink>
@@ -69,6 +69,9 @@ export const DropdownTienda = ({ item }) => {
 								</NavLink>
 							</DropdownMenu>
 						</UncontrolledDropdown>
+
+						//Icono carrito y suma de productos
+
 						<Link to="/cart" className=" position-absolute end-0">
 							<Icon
 								path={mdiCartVariant}

@@ -21,5 +21,5 @@ https://lucid.app/lucidspark/b2868472-7e4f-4494-9b74-ea3146ac6ca4/edit?invitatio
 
 Cele y Josefina > Tienda /
 Cristian > Album /
-Cesia > Noticias, catalogos /
-Jhosselyn > Login / 
+Cesia > Noticias, Register y Login /
+Jhosselyn > Register y Login / 

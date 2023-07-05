@@ -31,7 +31,7 @@ export const CardDetail = ({ item }) => {
 					src={item.img}
 					className="imgCardcard-img-top p-4 rounded mx-auto d-block"
 					alt={item.name}
-					style={{ maxHeight: "345px", width: "auto" }}
+					style={{ height: "345px", width: "auto" }}
 				/>
 				<div className="card-body">
 					<h3 className="card-title nameCard text-light">
@@ -49,7 +49,9 @@ export const CardDetail = ({ item }) => {
 							fontSize: "22px",
 							color: "#ffff",
 							textDecorationLine: "underline",
-						}}>
+						}}
+						onAdd={onAdd}
+						item={item}>
 						Ver detalles
 					</NavLink>
 				</div>

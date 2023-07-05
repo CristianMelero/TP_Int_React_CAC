@@ -17,7 +17,7 @@ import {
 } from "reactstrap";
 import { TotalItems } from "./TotalItems";
 
-export const DropdownTienda = () => {
+export const DropdownTienda = ({ item }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
@@ -30,7 +30,7 @@ export const DropdownTienda = () => {
 					<Nav className="mr-auto" navbar>
 						<NavItem>
 							<NavLink
-								to="/mediosdepago"
+								onClick={() => selectCategory("")}
 								className="text-light text-decoration-none nav-link">
 								Inicio
 							</NavLink>
@@ -48,22 +48,22 @@ export const DropdownTienda = () => {
 							</DropdownToggle>
 							<DropdownMenu>
 								<NavLink
-									to={`/tienda/funko`}
+									to={`/category/:category`}
 									className="dropdown-item">
 									Funko Pop!
 								</NavLink>
 								<NavLink
-									to={`/tienda/articulados`}
+									to={`/category/`}
 									className="dropdown-item">
 									Muñecos articulados
 								</NavLink>
 								<NavLink
-									to={`/tienda/remeras`}
+									to={`/category/`}
 									className="dropdown-item">
 									Remeras
 								</NavLink>
 								<NavLink
-									to={`/tienda/tazas`}
+									to={`/category/`}
 									className="dropdown-item">
 									Tazas
 								</NavLink>

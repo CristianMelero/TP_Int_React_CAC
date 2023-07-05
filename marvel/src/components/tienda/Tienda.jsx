@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { DropdownTienda } from "./DropdownTienda";
+import { ItemsList } from "./ItemsList";
 import "./Tienda.css";
 
-import { ItemsList } from "./ItemsList";
-
 export const Tienda = () => {
+	const [selectedCategory, setSelectedCategory] = useState("");
+
+	const selectCategory = (category) => {
+		setSelectedCategory(category);
+	};
+
 	return (
 		<div className="tienda">
 			<div className="tienda-container">
@@ -14,10 +20,10 @@ export const Tienda = () => {
 			</div>
 			<div>
 				<div className=" bg-dark">
-					<DropdownTienda />
+					<DropdownTienda selectCategory={selectCategory} />
 				</div>
 			</div>
-			<ItemsList />
+			<ItemsList categoryId={selectedCategory} />
 		</div>
 	);
 };

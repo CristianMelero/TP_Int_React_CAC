@@ -30,7 +30,7 @@ export const DropdownTienda = ({ item }) => {
 					<Nav className="mr-auto" navbar>
 						<NavItem>
 							<NavLink
-								to="/mediosdepago"
+								to="/tienda"
 								className="text-light text-decoration-none nav-link">
 								Inicio
 							</NavLink>
@@ -48,22 +48,22 @@ export const DropdownTienda = ({ item }) => {
 							</DropdownToggle>
 							<DropdownMenu>
 								<NavLink
-									to={`/category/:category`}
+									to={`/category/Funko Pop!`}
 									className="dropdown-item">
 									Funko Pop!
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/category/Muñecos articulados`}
 									className="dropdown-item">
 									Muñecos articulados
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/category/Remeras`}
 									className="dropdown-item">
 									Remeras
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/category/Gorras`}
 									className="dropdown-item">
 									Gorras
 								</NavLink>

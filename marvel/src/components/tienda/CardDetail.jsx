@@ -49,7 +49,9 @@ export const CardDetail = ({ item }) => {
 							fontSize: "22px",
 							color: "#ffff",
 							textDecorationLine: "underline",
-						}}>
+						}}
+						onAdd={onAdd}
+						item={item}>
 						Ver detalles
 					</NavLink>
 				</div>

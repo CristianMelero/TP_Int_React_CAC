@@ -21,7 +21,6 @@ import { CartView } from "./components/tienda/CartView";
 import { MediosPagos } from "./components/tienda/MediosPagos";
 import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
 import { CharacterDetail } from "./components/album/PersonajeDetalle";
-import { ItemsList } from "./components/tienda/ItemsList";
 
 function App() {
 	return (
@@ -42,6 +41,7 @@ function App() {
 							element={<LinksInteres />}
 						/>
 						<Route path="/tienda" element={<Tienda />} />
+						<Route path="/tienda/:categoryId" element={<Tienda />} />
 						<Route path="/nosotros" element={<Nosotros />} />
 						<Route path="/create" element={<Create />} />
 						<Route path="/edit/:id" element={<Edit />} />
@@ -56,7 +56,6 @@ function App() {
 						<Route path="/login" element={<Login/>}/>
 						<Route path="/register" element={<Register/>}/>
 						<Route path="/reset" element={<Reset/>}/>
-						<Route path='categorias/:categoryId' element={ <ItemsList/>}/>
 					</Routes>
 					<Footer />
 				</BrowserRouter>

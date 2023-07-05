@@ -2,6 +2,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
+import { Spinner } from "../Spinner";
+import { DropdownTienda } from "./DropdownTienda";
 
 
 export const ItemDetailContainer = ({ item }) => {

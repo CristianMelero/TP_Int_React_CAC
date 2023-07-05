@@ -35,7 +35,7 @@ export const Header = () => {
 						<Link to="/album" className="link">
 							Álbum
 						</Link>
-						<Link to="/juego" className="link">
+						<Link to="/paginajuego" className="link">
 							Juego
 						</Link>
 						<Link to="/tienda" className="link">

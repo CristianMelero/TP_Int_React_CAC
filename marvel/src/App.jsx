@@ -5,7 +5,7 @@ import { Inicio } from "./components/Inicio";
 import { Album } from "./components/album/Album";
 import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
-import { Juego } from "./components/Juego";
+import { Juego } from "./components/juego/Juego";
 import { LinksInteres } from "./components/LinksInteres";
 import { Login } from "./components/autenticación/Login";
 import { Register } from "./components/autenticación/Register";
@@ -21,7 +21,7 @@ import { CartView } from "./components/tienda/CartView";
 import { MediosPagos } from "./components/tienda/MediosPagos";
 import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
 import { CharacterDetail } from "./components/album/PersonajeDetalle";
-
+import { PaginaJuego } from "./components/juego/PaginaJuego";
 function App() {
 	return (
 		<>
@@ -55,6 +55,7 @@ function App() {
 						<Route path="/login" element={<Login/>}/>
 						<Route path="/register" element={<Register/>}/>
 						<Route path="/reset" element={<Reset/>}/>
+						<Route path="/paginajuego" element={<PaginaJuego />} />
 					</Routes>
 					<Footer />
 				</BrowserRouter>

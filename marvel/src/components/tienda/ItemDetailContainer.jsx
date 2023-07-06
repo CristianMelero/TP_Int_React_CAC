@@ -1,19 +1,20 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { db } from "../../firebaseConfig/firebase";
+import { CartContext } from "../../context/cartContext";
 import { Spinner } from "../Spinner";
 import { DropdownTienda } from "./DropdownTienda";
+import { ItemCount } from "./ItemCount";
+import Swal from "sweetalert2";
 
 
-export const ItemDetailContainer = ({ item }) => {
+export const ItemDetailContainer = () => {
 	
 	//Vista del detalle del producto
-	const [name, setName] = useState("");
-	const [price, setPrice] = useState(0);
-	const [detail, setDetail] = useState("");
-	const [img, setImg] = useState("");
+	const [item, setItem] = useState(null)
 	const [cargando, setCargando] = useState(true);
+	const { addToCart } = useContext(CartContext);
 
 	const { id } = useParams();
 
@@ -21,12 +22,8 @@ export const ItemDetailContainer = ({ item }) => {
 		setCargando(true);
 		const productDoc = await getDoc(doc(db, "products", id));
 
-		if (productDoc.exists()) {
-			console.log("funciona");
-			setName(productDoc.data().name);
-			setPrice(productDoc.data().price);
-			setDetail(productDoc.data().detail);
-			setImg(productDoc.data().img);
+		if (productDoc.exists()) {;
+			setItem(productDoc.data())
 			setCargando(false);
 		} else {
 			console.log("El producto no existe");
@@ -36,6 +33,19 @@ export const ItemDetailContainer = ({ item }) => {
 	useEffect(() => {
 		getProductsById(id);
 	}, []);
+
+	//Suma de item
+	const onAdd = (quantity) => {
+		addToCart(item, quantity);
+		Swal.fire({
+			position: "center",
+			icon: "success",
+			title: `${quantity} ${item.name} agregados al carrito`,
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		
+	};
 
 	if (cargando) {
 		return <Spinner />;
@@ -51,22 +61,19 @@ export const ItemDetailContainer = ({ item }) => {
 				<div
 					className="card-header"
 					style={{ fontSize: "1.5rem", textTransform: "uppercase" }}>
-					<strong>{name}</strong>
+					<strong>{item.name}</strong>
 				</div>
 				<div className="card-body d-flex align-items-center justify-content-center">
 					<div>
-						<img width={"40%"} src={img} alt={name} />
+						<img width={"40%"} src={item.img} alt={item.name} />
 					</div>
 					<div>
-						<p className="card-text"> {detail} </p>
+						<p className="card-text"> {item.detail} </p>
 						<p className="card-text">
-							<strong>$ {price} </strong>
+							<strong>$ {item.price} </strong>
 						</p>
-						
-						<Link to="/cart">
-							<button>Agregar al carrito</button>
-						{/* <ItemCount initial={1}  onAdd={()=>onAdd(item)} /> */}
-						</Link>
+
+						<ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
 					</div>
 				</div>
 				<div class="card-footer text-muted">

@@ -1,37 +1,18 @@
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CardDetail } from "./CardDetail";
-import { db } from "../../firebaseConfig/firebase";
 import { useParams } from "react-router-dom";
-import { Spinner } from "../Spinner";
 import "./ItemsList.css";
 
-export const ItemsList = () => {
-	const [cargando, setCargando] = useState(true);
-	const [items, setItems] = useState([]);
+export const ItemsList = ({items}) => {
+
     const [name, setName] = useState("");
 	const [price, setPrice] = useState(0);
 	const [detail, setDetail] = useState("");
 	const [img, setImg] = useState("");
+    console.log(items)
 
-    const itemsCollection = collection(db,"products")
     const {categoryId} = useParams();
     //const q = query(itemsCollection, where('category', "==", categoryId ))
-    
-    //Lista de productos de Firebase
-	const getProducts = async () => {
-		const data = await getDocs(itemsCollection);
-		setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        setCargando(false)
-	};
-
-    useEffect(() => {
-		getProducts();
-	}, []);
-
-	if (cargando) {
-		return <Spinner />;
-	}
 
 // Filtro por categorias
 

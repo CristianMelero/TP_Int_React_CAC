@@ -6,18 +6,15 @@ import {
 	Collapse,
 	Navbar,
 	NavbarToggler,
-	NavbarBrand,
 	Nav,
 	NavItem,
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
-	DropdownItem,
-	NavbarText,
 } from "reactstrap";
 import { TotalItems } from "./TotalItems";
 
-export const DropdownTienda = ({ item }) => {
+export const DropdownTienda = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
@@ -30,7 +27,7 @@ export const DropdownTienda = ({ item }) => {
 					<Nav className="mr-auto" navbar>
 						<NavItem>
 							<NavLink
-								to="/mediosdepago"
+								to="/tienda"
 								className="text-light text-decoration-none nav-link">
 								Inicio
 							</NavLink>
@@ -48,24 +45,24 @@ export const DropdownTienda = ({ item }) => {
 							</DropdownToggle>
 							<DropdownMenu>
 								<NavLink
-									to={`/category/:category`}
+									to={`/tienda/funko`}
 									className="dropdown-item">
 									Funko Pop!
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/tienda/articulados`}
 									className="dropdown-item">
 									Muñecos articulados
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/tienda/remeras`}
 									className="dropdown-item">
 									Remeras
 								</NavLink>
 								<NavLink
-									to={`/category/`}
+									to={`/tienda/tazas`}
 									className="dropdown-item">
-									Gorras
+									Tazas
 								</NavLink>
 							</DropdownMenu>
 						</UncontrolledDropdown>

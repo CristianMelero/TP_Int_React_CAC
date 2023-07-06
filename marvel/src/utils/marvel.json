@@ -121,7 +121,7 @@
     },
     {
       "Name": "Destroyer",
-      "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/d/90/526547f509313.jpg",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/3/32/Loki_Laufeyson_%28Kid_Loki%29_%28Earth-616%29_and_Destroyer_%28Enchanted_Armor%29_from_Journey_Into_Mystery_Vol_1_626_001.png",
       "Intelligence": "2",
       "Strength": "7",
       "Speed": "5",
@@ -161,7 +161,7 @@
     },
     {
       "Name": "Winter Soldier",
-      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/8/89/Original_Sin_Vol_1_8_Dell%27Otto_Variant_Textless.jpg/revision/latest?cb=20140513165300",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/8/89/Original_Sin_Vol_1_8_Dell%27Otto_Variant_Textless.jpg",
       "Intelligence": "2",
       "Strength": "4",
       "Speed": "2",
@@ -171,7 +171,7 @@
     },
     {
       "Name": "Falcon",
-      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/e/e1/Captain_America_Symbol_of_Truth_Vol_1_1_Clarke_Variant_Textless.jpg/revision/latest/scale-to-width-down/1000?cb=20220515050639",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/e/e1/Captain_America_Symbol_of_Truth_Vol_1_1_Clarke_Variant_Textless.jpg",
       "Intelligence": "2",
       "Strength": "2",
       "Speed": "3",
@@ -191,7 +191,7 @@
     },
     {
       "Name": "Agente 13",
-      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/6/6c/Sharon_Carter_%28Earth-616%29_from_Captain_America_Sentinel_of_Liberty_Vol_2_11_001.jpg/revision/latest?cb=20230415234335",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/6/6c/Sharon_Carter_%28Earth-616%29_from_Captain_America_Sentinel_of_Liberty_Vol_2_11_001.jpg",
       "Intelligence": "3",
       "Strength": "2",
       "Speed": "2",
@@ -201,7 +201,7 @@
     },
     {
       "Name": "Star Lord",
-      "Image_Link": "https://static.wikia.nocookie.net/doblaje/images/d/d5/Star_Lord_Comic.png/revision/latest?cb=20150208213055&path-prefix=es",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/d/d4/Peter_Quill_%28Earth-616%29_from_Guardians_of_the_Galaxy_Vol_6_13_cover_001.jpg",
       "Intelligence": "4",
       "Strength": "3",
       "Speed": "2",
@@ -221,7 +221,7 @@
     },
     {
       "Name": "Drax",
-      "Image_Link": "https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2015/10/Drax-Destacada.jpg?resize=698%2C507&ssl=1",
+      "Image_Link": "https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2015/10/Drax-Destacada.jpg",
       "Intelligence": "2",
       "Strength": "5",
       "Speed": "2",
@@ -251,7 +251,7 @@
     },
     {
       "Name": "Nébula",
-      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/4/45/Nebula_Vol_1_1_Textless.jpg/revision/latest?cb=20210729032454",
+      "Image_Link": "https://static.wikia.nocookie.net/marveldatabase/images/4/45/Nebula_Vol_1_1_Textless.jpg",
       "Intelligence": "4",
       "Strength": "5",
       "Speed": "2",
@@ -271,7 +271,7 @@
     },
     {
       "Name": "Fury",
-      "Image_Link": "https://assetsio.reedpopcdn.com/FURY2023001_Cov-header.jpg?width=880&quality=80&format=jpg&auto=webp",
+      "Image_Link": "https://assetsio.reedpopcdn.com/FURY2023001_Cov-header.jpg",
       "Intelligence": "7",
       "Strength": "2",
       "Speed": "2",

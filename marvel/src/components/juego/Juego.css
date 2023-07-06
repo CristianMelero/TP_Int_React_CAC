@@ -1,0 +1,49 @@
+.flexBox_TJs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 3%;
+    width: 100%;
+    text-align: center;
+    padding-inline: 25%;
+}
+.tj{
+    margin-inline: 2.5%;
+    display: flex;
+    border: #202020 solid 2.25px;
+    border-radius: 3px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 100px;
+    min-height: 100px;
+    margin-block: 1%;
+    width: 100%;
+}
+.imagen_avenger{
+    max-width: 85px;
+    min-width: 85px;
+    max-height: 85px;
+    min-height: 85px;
+    border-radius: 50%;
+    border: #ED1515 solid 1.5px;
+}
+.tj_name_input{
+     
+    color: #ED1515;
+    font-weight: bold;
+    width: 50%;
+    font-size:large ;
+    text-align: center;
+    background-size: contain;
+    align-self: center;
+    height:auto;
+    margin-right: 1%;
+}
+.tj_img{
+    background-color: white;    
+    width: 50%;
+    text-align: center;
+    align-self: center;
+}
+h4 {
+    text-align: center;
+}

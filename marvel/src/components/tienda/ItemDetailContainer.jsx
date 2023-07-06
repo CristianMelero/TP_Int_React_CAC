@@ -70,7 +70,7 @@ export const ItemDetailContainer = ({ item, onAdd }) => {
 							</p>
 							<ItemCount
 								initial={1}
-								stock={item.stock}
+								
 								onAdd={onAdd}
 							/>
 						</div>

@@ -1,8 +1,14 @@
+import { DropdownTienda } from "./DropdownTienda"
 
 
-export const MediosPagos = ()=>{
+
+export const MediosPagos = (items)=>{
 
     return(
+        <>
+        <div style={{backgroundColor:"coral"}}>
+					<DropdownTienda items={ items } />
+				</div>
         <div className=" container d-flex flex-column justify-content-center">
             <h2 className="text-center m-3 bg-secondary text-light p-2">Nuestros medios de pago</h2>
                 
@@ -13,7 +19,7 @@ export const MediosPagos = ()=>{
                         <h5><strong> 🪙 Transferencia bancaria</strong> (ALIAS: marvel.tienda)</h5>
                     </div>
                 </div>
-
         </div>
+        </>
     )
 }

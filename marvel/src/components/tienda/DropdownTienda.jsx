@@ -6,14 +6,11 @@ import {
 	Collapse,
 	Navbar,
 	NavbarToggler,
-	NavbarBrand,
 	Nav,
 	NavItem,
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
-	DropdownItem,
-	NavbarText,
 } from "reactstrap";
 import { TotalItems } from "./TotalItems";
 
@@ -30,7 +27,7 @@ export const DropdownTienda = () => {
 					<Nav className="mr-auto" navbar>
 						<NavItem>
 							<NavLink
-								to="/mediosdepago"
+								to="/tienda"
 								className="text-light text-decoration-none nav-link">
 								Inicio
 							</NavLink>

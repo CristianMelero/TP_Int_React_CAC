@@ -29,28 +29,29 @@ export const PaginaJuego = () => {
 		<p><img src="../instrucciones.png" alt="Botón Start Game" width="200"></img></p>
 		</div>
 		<div className="equipos">
-		<div className=".tuEquipo">
-		<h2>¡Tu equipo!</h2>
+		<div>
+		<h2>&nbsp;&nbsp;¡Tu equipo!</h2><br />
 		<p><img src="../heroe_usuarioTJ.png" alt="Héroe" width="200"></img></p>
 		<p><img src="../ironman_TJ.png" alt="Iron Man" width="200"></img></p>
 		<p><img src="../thor_TJ.png" alt="Thor" width="200"></img></p>
 		</div>
-		<div className=".versus">
+		<div className="versus">
 		<p><img src="../versus.png" alt="vs." width="150"></img></p>
+		</div> 
+		<div>
+		<h2>&nbsp;&nbsp;¡El nuestro!</h2><br />
+		<p><img src="../heroe_azar.png" alt="vs." width="200"></img></p>
+		<p><img src="../heroe_azar.png" alt="vs." width="200"></img></p>
+		<p><img src="../heroe_azar.png" alt="vs." width="200"></img></p>
 		</div>
-		<div className=".elNuestro">
-		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡El nuestro!</h1><br />
-		<p><img src="../heroe_azar.png" alt="vs." width="200"></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../heroe_azar.png" alt="vs." width="200"></img></p>
-		<p><img src="../heroe_azar.png" alt="vs." width="200"></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../heroe_azar.png" alt="vs." width="200"></img></p>
-		<p><img src="../heroe_azar.png" alt="vs." width="200"></img>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../heroe_azar.png" alt="vs." width="200"></img></p>
-		</div>
-		</div>
-		<Nav>
+		</div> 
+		<div className="start">
+		
 			<Link to="/juego">
-				<img src="../start.png" alt="Botón Start Game" width="125"></img>
+				<p><img src="../start.png" alt="Botón Start Game" width="125"></img></p>
 			</Link>
-		</Nav>
-
+		
+		</div>
 
 		</>
 	);

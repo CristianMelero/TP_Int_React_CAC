@@ -1,6 +1,8 @@
 // IMPORTAR EL JSON LOCAL
 import data from "../../utils/marvel.json";
 import { useEffect, useState } from "react";
+import "./Juego.css"
+import { mdiFormatAlignCenter } from "@mdi/js";
 
 // CREAR LA FUNCION CORRESPONDIENTE AL COMPONENTE JUEGO
 export const Juego = () => {
@@ -76,6 +78,9 @@ useEffect(() => {
 	const [nombres_atributos_clickeados, setNombres_atributos_clickeados] =
 		useState([]);
 
+	//CREAR ARRAY QUE UNA LOS HEROES SELECCIONADOS x USUARIO + HEROES AL AZAR
+	const [vengadores_usuario_final, setVengadores_usuario_final] = useState([]);
+	
 	//CODIGO ONSUBMIT
 	const submitHandler = (ev) => {
 		ev.preventDefault();
@@ -211,6 +216,7 @@ useEffect(() => {
     vengadores_usuario[4]=retenidos_en_indice_json[1];
     console.log("vengadores_usuario");
     vengadores_usuario.forEach((element,i)=>{console.log(data[vengadores_usuario[i]].Name)});
+	setVengadores_usuario_final(vengadores_usuario);
 
 	//CALCULO DE PODERES PROMEDIOS DEL EQUIPO USUARIO
     let tarjeta_poderes_equipo_usuario=[];
@@ -268,30 +274,55 @@ useEffect(() => {
 	return (
 		<>
 			{/*//PINTAR EQUIPO MAQUINA EN PANTALLA*/}
-			<h3>Nuestro equipo</h3>
+			<br /><br />
+			<h4>Mirá, este será tu rival, nuestro equipo de 6 Avengers:</h4>
+			<div className="flexBox_TJs">
 			{equipoCompu.map((element) => (
-				<div>
+				<div className="tj">
+				<div className="tj_img">
+					<img
+							className="imagen_avenger"
+							src={data[element].Image_Link}
+							alt="Imagen Avenger"
+							width="100	"
+					/>
+				</div>
+					<div className="tj_name_input">
 					<p>{data[element].Name}</p>
 				</div>
+				</div>
 			))}
+			</div>
 
 			{/*//FORMULARIO*/}
 			<form onSubmit={submitHandler}>
 				{/* SECCION PINTAR HEROES A SELECCIONAR */}
-				<h3>Ahora elegí vos:</h3>
+				<h4>Ahora tenés que formar tu equipo, comenzá elegiendo tus 2 Avengers favoritos:</h4>
+				<div className="flexBox_TJs">
 				{avengers.map((element, i) => (
-					<div>
+					<div className="tj">
+					<div className="tj_img">
+						<img
+							className="imagen_avenger"
+							src={data[element].Image_Link}
+							alt="Imagen Avenger"
+							width="100	"
+						/>
+					</div>
+					<div className="tj_name_input">
+						<p>{data[element].Name}</p>
 						<input
 							name="avengers_clickeados"
 							type="checkbox"
 							value={element}
 						/>
-						<label>{data[element].Name}</label>
+					</div>
 					</div>
 				))}
-
+				</div>
 				{/* SECCION PINTAR ATRIBUTOS A SELECCIONAR */}
-				<h5> Seleccioná tus 2 Atributos más fuertes </h5>
+				<h4>Bien, 3 Avengers más serán seleccionados al azar para tu equipo y el 6to. serás vos.</h4>
+				<h4>Elegí los dos atributos que más te gusten, serán los poderes que más te representen y los de máximo puntaje en tu tarjeta Advenger.</h4>
 				<div>
 					<input
 						name="atributos_clickeados"
@@ -341,15 +372,44 @@ useEffect(() => {
 					<label>Habilidad de combate</label>
 				</div>
 
-				<button type="submit">Continuar</button>
+				<button type="submit">Click acá para continuar</button>
 
-				<p>
-					Elegiste: {nombres_clickeados[0]} y {nombres_clickeados[1]}
-				</p>
-				<p>
-					Elegiste: {nombres_atributos_clickeados[0]} y{" "}
-					{nombres_atributos_clickeados[1]}
-				</p>
+				<h4>
+					Así quedó tu equipo: {nombres_clickeados[0]}  {nombres_clickeados[1]}
+					nuevo:
+				</h4>
+					<div className="flexBox_TJs">
+					{vengadores_usuario_final.map((element) => (
+					<div className="tj">
+					<div className="tj_img">
+					<img
+							className="imagen_avenger"
+							src={data[element].Image_Link}
+							alt="Imagen Avenger"
+					/>
+					</div>
+					<div className="tj_name_input">
+					<p>{data[element].Name}</p>
+					</div>
+					</div>
+					))}	
+					<div className="tj">
+					<div className="tj_img">
+					<img
+							className="imagen_avenger"
+							src="././usuario.png"
+							alt="Imagen Super Usuario"
+					/>
+					</div>
+					<div className="tj_name_input">
+					<p>{usuario}</p>
+					</div>
+					</div>
+					</div>
+
+				<h4>Cada Avenger tiene una tarjeta de poderes, con estas se hará una tarjeta única y representativa por equipo promediando en cada uno de los poderes de sus integrantes.</h4>
+				<h4>WINNER</h4>
+				<h4>GAME OVER</h4>
 			</form>
 		</>
 	);

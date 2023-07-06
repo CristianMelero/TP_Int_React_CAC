@@ -23,6 +23,7 @@ import { MediosPagos } from "./components/tienda/MediosPagos";
 import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
 import { CharacterDetail } from "./components/album/PersonajeDetalle";
 import { PaginaJuego } from "./components/juego/PaginaJuego";
+import { OtroJuego } from "./components/juego/OtroJuego";
 
 function App() {
 	return (
@@ -59,6 +60,7 @@ function App() {
 						<Route path="/register" element={<Register/>}/>
 						<Route path="/reset" element={<Reset/>}/>
 						<Route path="/paginajuego" element={<PaginaJuego />} />
+						<Route path="/otrojuego" element={<OtroJuego />} />
 					</Routes>
 					<Footer />
 				</BrowserRouter>

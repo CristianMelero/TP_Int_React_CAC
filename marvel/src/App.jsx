@@ -48,7 +48,7 @@ function App() {
 						<Route path="/nosotros" element={<Nosotros />} />
 						<Route path="/create" element={<Create />} />
 						<Route path="/edit/:id" element={<Edit />} />
-						<Route path="/noticia/:id" element={<Noticia />} />
+						<Route path="/noticias/noticia/:id" element={<Noticia />} />
 						<Route path="/noticias" element={<NoticiasAll/>} />
 						<Route path="/cart" element={<CartView />} />
 						<Route

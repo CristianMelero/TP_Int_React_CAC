@@ -435,7 +435,7 @@ useEffect(() => {
 				<h4>Cada Avenger tiene una tarjeta de poderes, con ellas se hizo una tarjeta única y representativa</h4>
 				<h4>por equipo promediando en cada uno de los poderes de sus integrantes.</h4>
 				<div className="linea_divisoria"> </div>
-				<h2>"Estas son las tarjetas de poder finales de cada equipo:</h2>
+				<h2>Estas son las tarjetas de poder finales de cada equipo:</h2>
 				
 				<div className="cruce_tarjetas_equipos">				
 				<div className="tarjeta_equipos">				

@@ -4,11 +4,8 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
 import { Spinner } from "../Spinner";
 import { DropdownTienda } from "./DropdownTienda";
-<<<<<<< HEAD
-=======
 import { ItemCount } from "./ItemCount";
 import { CardDetail } from "./CardDetail";
->>>>>>> afb09fff0fb3c289007a85e20d2cd1b929c95052
 
 export const ItemDetailContainer = ({ item, onAdd }) => {
 

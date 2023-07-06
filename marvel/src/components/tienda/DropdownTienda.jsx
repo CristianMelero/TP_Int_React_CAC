@@ -48,12 +48,12 @@ export const DropdownTienda = () => {
 							</DropdownToggle>
 							<DropdownMenu>
 								<NavLink
-									to={`/tienda/Funko Pop!`}
+									to={`/tienda/funko`}
 									className="dropdown-item">
 									Funko Pop!
 								</NavLink>
 								<NavLink
-									to={`/tienda/Muñecos articulados`}
+									to={`/tienda/articulados`}
 									className="dropdown-item">
 									Muñecos articulados
 								</NavLink>
@@ -63,9 +63,9 @@ export const DropdownTienda = () => {
 									Remeras
 								</NavLink>
 								<NavLink
-									to={`/tienda/Gorras`}
+									to={`/tienda/tazas`}
 									className="dropdown-item">
-									Gorras
+									Tazas
 								</NavLink>
 							</DropdownMenu>
 						</UncontrolledDropdown>

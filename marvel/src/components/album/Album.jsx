@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { get } from "../../utils/MarvelApi";
 import { Spinner } from "../Spinner";
 import { Buscador } from "./Buscador";
@@ -49,7 +49,7 @@ export const Album = () => {
 			<div className="d-flex justify-content-around align-items-center p-5">
 				<div>
 					<h1>
-						<b>ÁLBUM</b>
+						<b>Álbum</b>
 					</h1>
 				</div>
 				<div>

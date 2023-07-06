@@ -59,6 +59,8 @@
 .noticiasCard {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    white-space: inherit;
 }
 
 .noticiasCard .card {
@@ -94,4 +96,8 @@
     display: flex;
     gap: 1%;
     margin: 2% 5%;
+}
+
+.carousel-caption {
+    font-size: larger;
 }

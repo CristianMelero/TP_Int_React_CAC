@@ -1,25 +1,15 @@
 import UncontrolledExample from "./Carousel";
-import { Noticias } from "./Noticias";
+import { Noticias } from "./noticias/Noticias";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export const Inicio = () => {
 	return (
 			<div className="main">
 				<UncontrolledExample />
 				<h3 className="titulo">Últimas noticias</h3>
+				<Link to="/noticias"><Button variant="danger" style={{ marginLeft: '2%' }}>Ver todas las noticias</Button></Link>
 				<Noticias />
-				<h3 className="titulo">TITULO</h3>
-				<br />
-				<p className="parrafo">
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-					Aliquam consequuntur quis corporis blanditiis corrupti
-					doloremque adipisci cum vitae impedit veritatis deleniti,
-					enim vel esse. Quibusdam provident aut totam repellat saepe?
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-					Aliquam consequuntur quis corporis blanditiis corrupti
-					doloremque adipisci cum vitae impedit veritatis deleniti,
-					enim vel esse. Quibusdam provident aut totam repellat saepe?
-				</p>
-				<br />
 			</div>
 	);
 };

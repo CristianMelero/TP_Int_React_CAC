@@ -1,8 +1,11 @@
 import { get } from "../../utils/MarvelApi";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CharacterNotFound from "./manage404";
 import { Spinner } from "../Spinner";
+import "./PersonajeDetalle.css";
+import Button from "react-bootstrap/Button";
 
 export const CharacterDetail = () => {
 	const { characterId } = useParams();
@@ -22,13 +25,14 @@ export const CharacterDetail = () => {
 	const imgURL = `${character.thumbnail.path}.${character.thumbnail.extension}`;
 
 	return (
-		<div>
-			<img src={imgURL} alt={character.name} className="col" />
+		<div className="main bg-album">
+			<img src={imgURL} alt={character.name} className="col characterImg" />
 			<div className="characterDetalle">
 				<p className="item">
 					<strong>Nombre: </strong>
 					{character.name}
 				</p>
+				<hr></hr>
 				{character.description !== '' ? (
 					<p>
 						<strong>Descripción: </strong>
@@ -37,6 +41,7 @@ export const CharacterDetail = () => {
 				) : (
 					<></>
 				)}
+				<hr></hr>
 				<p>
 					<strong>Comics: </strong>
 					{character.comics.items
@@ -44,6 +49,7 @@ export const CharacterDetail = () => {
 						.join(", ")}
 				</p>
 			</div>
+			<Link to="/album" className="regresarBtn"><Button variant="warning">Regresar al álbum</Button></Link>
 		</div>
 	);
 };

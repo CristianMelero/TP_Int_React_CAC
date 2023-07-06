@@ -5,10 +5,13 @@
 
 .buscadorBox {
 	position: relative;
+	width: 250px;
+
 }
 
 .buscadorInput {
 	height: 35px;
+	border: 1px solid black;
 	border-radius: 10px;
 	padding: 5px 30px 5px 10px;
 }
@@ -20,5 +23,6 @@
 	cursor: pointer;
 	height: 100%;
 	border: none;
+	border-left: 1px solid black;
 	background: none;
 }

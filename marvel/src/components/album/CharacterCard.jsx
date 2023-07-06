@@ -6,7 +6,7 @@ export const CharacterCard = ({ character }) => {
 
 	return (
 		<Card style={{ width: "15rem" }} className="mb-4 text-center bg-dark">
-			<Link to={`/character/${character.id}` }>
+			<Link to={`/character/${character.id}` } style={{ color: 'whitesmoke', textDecoration: 'none' }}>
 				<Card.Img
 					variant="top"
 					src={imgURL}

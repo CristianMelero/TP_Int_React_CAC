@@ -1,0 +1,21 @@
+.bg-album {
+    background-color: brown;
+    padding: 2%;
+}
+
+.characterDetalle {
+    color: whitesmoke;
+    margin: 2%;
+    font-size: 22px;
+}
+
+.regresarBtn {
+    margin: 2%;
+}
+
+.characterImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

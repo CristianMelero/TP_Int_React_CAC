@@ -1,0 +1,8 @@
+.containerNoticia {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerNoticia input, textarea.form-control {
+    width: 1000px;
+}

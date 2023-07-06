@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { getDoc, updateDoc, doc } from "firebase/firestore";
 import { useParams, useNavigate } from "react-router-dom";
-import { db } from '../firebaseConfig/firebase.js';
+import { db } from '../../firebaseConfig/firebase.js';
 
 export const Edit = () => {
     const [titulo, setTitulo] = useState("")
@@ -43,7 +43,7 @@ export const Edit = () => {
     return (
         <>
             <div class="main">
-                <div className="container">
+                <div className="container containerNoticia">
                     <div className="row">
                         <div className="col">
                             <h1 className="titulo">Editar noticia</h1>

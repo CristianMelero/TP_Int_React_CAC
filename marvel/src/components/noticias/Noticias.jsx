@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card } from "react-bootstrap/";
 import { collection, getDocs } from 'firebase/firestore';
-import { auth, db } from '../firebaseConfig/firebase.js';
+import { auth, db } from '../../firebaseConfig/firebase.js';
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export const Noticias = () => {
-	const [user, loading] = useAuthState(auth);
+	const [user] = useAuthState(auth);
 
 	const [noticias, setNoticias] = useState([])
 	const noticiasCollection = collection(db, 'noticias')

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./Buscador.css";
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
+import "./Buscador.css";
 
 export const Buscador = ({setCurrentPage}) => {
 	const [searchText, setSearchText] = useState("");
@@ -14,18 +15,18 @@ export const Buscador = ({setCurrentPage}) => {
 	};
 
 	return (
-		<form className="buscadorContainer" onSubmit={handleSubmit}>
+		<Form className="buscadorContainer" onSubmit={handleSubmit}>
 			<div className="buscadorBox">
-				<input
+				<Form.Control
 					className="buscadorInput"
 					type="text"
 					value={searchText}
 					onChange={(e) => setSearchText(e.target.value)}
 				/>
 				<button className="buscadorButton" type="submit">
-					BUSCAR
+					Buscar
 				</button>
 			</div>
-		</form>
+		</Form>
 	);
 };

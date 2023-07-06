@@ -13,9 +13,10 @@ import { Reset } from "./components/autenticación/Reset";
 import { MapaSitio } from "./components/MapaSitio";
 import { Nosotros } from "./components/Nosotros";
 import { Tienda } from "./components/tienda/Tienda";
-import { Create } from "./components/Create";
-import { Edit } from "./components/Edit";
-import { Noticia } from "./components/Noticia";
+import { Create } from "./components/noticias/Create";
+import { Edit } from "./components/noticias/Edit";
+import { Noticia } from "./components/noticias/Noticia";
+import { NoticiasAll } from "./components/noticias/NoticiasAll";
 import "./styles.css";
 import { CartView } from "./components/tienda/CartView";
 import { MediosPagos } from "./components/tienda/MediosPagos";
@@ -45,7 +46,7 @@ function App() {
 						<Route path="/create" element={<Create />} />
 						<Route path="/edit/:id" element={<Edit />} />
 						<Route path="/noticia/:id" element={<Noticia />} />
-						<Route path="/noticia/:id" element={<Noticia />} />
+						<Route path="/noticias" element={<NoticiasAll/>} />
 						<Route path="/cart" element={<CartView />} />
 						<Route
 							path="/detail/:id"

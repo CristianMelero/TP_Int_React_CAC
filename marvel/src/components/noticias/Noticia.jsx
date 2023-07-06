@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { getDoc, deleteDoc, doc } from "firebase/firestore";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { db } from '../firebaseConfig/firebase.js';
+import { auth, db } from '../../firebaseConfig/firebase.js';
 import Button from 'react-bootstrap/Button';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const Noticia = () => {
+  const [user] = useAuthState(auth);
+
   const [titulo, setTitulo] = useState("")
   const [foto, setFoto] = useState("")
   const [descripcion, setDescripcion] = useState("")
@@ -35,6 +38,14 @@ export const Noticia = () => {
     getNoticiaById(id);
   }, [])
 
+  if (user?.email == "administrador@ejemplo.com") {
+    var editar_noticia = <Link to={`/edit/${id}`}><Button variant="success">Actualizar</Button></Link>
+    var borrar_noticia = <Button variant="danger" onClick={() => { deleteNoticia(id) }}>Borrar</Button>
+  } else {
+    var editar_noticia = '';
+    var borrar_noticia = '';
+  }
+
   return (
     <>
       <div class="main">
@@ -46,8 +57,8 @@ export const Noticia = () => {
           </p>
         </div>
         <div className="btngroup">
-          <Link to={`/edit/${id}`}><Button variant="success">Actualizar</Button></Link>
-          <Button variant="danger" onClick={() => { deleteNoticia(id) }}>Borrar</Button>
+          {editar_noticia}
+          {borrar_noticia}
         </div>
       </div>
     </>

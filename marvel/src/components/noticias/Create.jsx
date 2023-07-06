@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
-import { collection, addDoc } from "firebase/firestore"
-import { db } from "../firebaseConfig/firebase.js"
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebaseConfig/firebase.js";
+import "./Noticias.css";
 
 export const Create = () => {
     const [titulo, setTitulo] = useState("")
@@ -26,7 +27,7 @@ export const Create = () => {
     return (
         <div class="main">
             <br></br>
-            <div className="container">
+            <div className="container containerNoticia">
                 <div className="row">
                     <div className="col">
                         <h1 className="titulo">Publicar noticia</h1>

@@ -3,6 +3,7 @@ import data from "../../utils/marvel.json";
 import { useEffect, useState } from "react";
 import "./Juego.css"
 import { mdiFormatAlignCenter } from "@mdi/js";
+import { Link } from "react-router-dom";
 
 // CREAR LA FUNCION CORRESPONDIENTE AL COMPONENTE JUEGO
 export const Juego = () => {
@@ -67,19 +68,34 @@ useEffect(() => {
 		}
 	}
 
+	//                   V A R I A B L E S   useState
 	//CREAR ARRAY QUE CAPTE LOS HEROES SELECCIONADOS POR EL USUARIO
 	const [avengers_clickeados, setAvengers_clickeados] = useState([]);
+	
 	//CREAR ARRAY QUE DE LOS NOMBRES DE LOS HEROES SELECCIONADOS POR EL USUARIO
 	const [nombres_clickeados, setNombres_clickeados] = useState([]);
 
 	//CREAR ARRAY QUE CAPTE LOS ATRIBUTOS SELECCIONADOS POR EL USUARIO
 	const [atributos_clickeados, setAtributos_clickeados] = useState([]);
+	
 	//CREAR ARRAY QUE DE LOS NOMBRES DE LOS ATRIBUTOS SELECCIONADOS POR EL USUARIO
 	const [nombres_atributos_clickeados, setNombres_atributos_clickeados] =
 		useState([]);
 
 	//CREAR ARRAY QUE UNA LOS HEROES SELECCIONADOS x USUARIO + HEROES AL AZAR
 	const [vengadores_usuario_final, setVengadores_usuario_final] = useState([]);
+
+	//CREAR UNA VARIABLE QUE REPRESENTE AL GANADOR
+	const [ganador, setGanador] = useState();
+
+	//CREAR UNA VARIABLE QUE REPRESENTE A LA IMAGEN DEL GANADOR
+	const [imagen_ganador, setImagen_ganador] = useState();
+
+	//CREAR UN ARRAY QUE CONTENGA LA TARJETA EQUIPO COMPU
+	const [tarjeta_compu, setTarjeta_compu] = useState([]);
+
+	//CREAR UN ARRAY QUE CONTENGA LA TARJETA EQUIPO USUARIO
+	const [tarjeta_usuario, setTarjeta_usuario] = useState([]);
 	
 	//CODIGO ONSUBMIT
 	const submitHandler = (ev) => {
@@ -189,15 +205,16 @@ useEffect(() => {
         suma_Fighting_Ability=suma_Fighting_Ability + Number.parseFloat(data[equipoCompu[i]].Fighting_Ability);
     });
 
-    tarjeta_poderes_compu[0]=suma_Intelligence/6;
-    tarjeta_poderes_compu[1]=suma_Strength/6;
-    tarjeta_poderes_compu[2]=suma_Speed/6;
-    tarjeta_poderes_compu[3]=suma_Durability/6;
-    tarjeta_poderes_compu[4]=suma_Energy_Projection/6;
-    tarjeta_poderes_compu[5]=suma_Fighting_Ability/6;
+    tarjeta_poderes_compu[0]=(suma_Intelligence/6).toFixed(2);
+    tarjeta_poderes_compu[1]=(suma_Strength/6).toFixed(2);
+    tarjeta_poderes_compu[2]=(suma_Speed/6).toFixed(2);
+    tarjeta_poderes_compu[3]=(suma_Durability/6).toFixed(2);
+    tarjeta_poderes_compu[4]=(suma_Energy_Projection/6).toFixed(2);
+    tarjeta_poderes_compu[5]=(suma_Fighting_Ability/6).toFixed(2);
 
     console.log("tarjeta_poderes_compu");
     tarjeta_poderes_compu.forEach((element,i)=>{console.log(tarjeta_poderes_compu[i])});
+	setTarjeta_compu(tarjeta_poderes_compu);
 
 	// CONVERTIR ARRAY DE LOS FAVORITOS DEL USUARIO DE NOMBRE A INDICE DEL JSON
     let retenidos_en_indice_json=[];
@@ -236,15 +253,16 @@ useEffect(() => {
         suma_Fighting_Ability=suma_Fighting_Ability + Number.parseFloat(data[vengadores_usuario[i]].Fighting_Ability);
     });
 
-    tarjeta_poderes_equipo_usuario[0]=(suma_Intelligence+heroe_usuario[0])/6;
-    tarjeta_poderes_equipo_usuario[1]=(suma_Strength+heroe_usuario[1])/6;
-    tarjeta_poderes_equipo_usuario[2]=(suma_Speed+heroe_usuario[2])/6;
-    tarjeta_poderes_equipo_usuario[3]=(suma_Durability+heroe_usuario[3])/6;
-    tarjeta_poderes_equipo_usuario[4]=(suma_Energy_Projection+heroe_usuario[4])/6;
-    tarjeta_poderes_equipo_usuario[5]=(suma_Fighting_Ability+heroe_usuario[5])/6;
+    tarjeta_poderes_equipo_usuario[0]=((suma_Intelligence+heroe_usuario[0])/6).toFixed(2);
+    tarjeta_poderes_equipo_usuario[1]=((suma_Strength+heroe_usuario[1])/6).toFixed(2);
+    tarjeta_poderes_equipo_usuario[2]=((suma_Speed+heroe_usuario[2])/6).toFixed(2);
+    tarjeta_poderes_equipo_usuario[3]=((suma_Durability+heroe_usuario[3])/6).toFixed(2);
+    tarjeta_poderes_equipo_usuario[4]=((suma_Energy_Projection+heroe_usuario[4])/6).toFixed(2);
+    tarjeta_poderes_equipo_usuario[5]=((suma_Fighting_Ability+heroe_usuario[5])/6).toFixed(2);
 
     console.log("tarjeta_poderes_equipo_usuario");
     tarjeta_poderes_equipo_usuario.forEach((element,i)=>{console.log(tarjeta_poderes_equipo_usuario[i])});
+	setTarjeta_usuario(tarjeta_poderes_equipo_usuario);
 	
     //CRUZAR DATOS PARA OBTENER EL RESULTADO:
     var resultado;
@@ -260,15 +278,19 @@ useEffect(() => {
      });
 
     if(ptos_usuario>ptos_computadora){
-        resultado="usuario";
+        resultado=usuario;
+		setImagen_ganador("././usuario.png");
     }else{
         if(ptos_usuario<ptos_computadora){
             resultado="compu";
+			setImagen_ganador("././supercompu.png");
         }else{
             resultado="empate";
-        }
+			setImagen_ganador("././empate.png");
+		}
     }
 	console.log(resultado);
+	setGanador(resultado);
 };
 
 	return (
@@ -321,14 +343,16 @@ useEffect(() => {
 				))}
 				</div>
 				{/* SECCION PINTAR ATRIBUTOS A SELECCIONAR */}
-				<h4>Bien, 3 Avengers más serán seleccionados al azar para tu equipo y el 6to. serás vos.</h4>
-				<h4>Elegí los dos atributos que más te gusten, serán los poderes que más te representen y los de máximo puntaje en tu tarjeta Advenger.</h4>
+				<br /><br />
+				<h4>Muy bien, 3 Avengers más serán seleccionados al azar para tu equipo y el 6to. serás vos. Elegí los dos atributos</h4>
+				<h4>que más te gusten, serán los poderes que más te representen y los de máximo puntaje en tu tarjeta Advenger.</h4>
+				<div className="atributos_clickeados">
 				<div>
 					<input
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Intelligence"
-					/>
+					/>&nbsp;
 					<label>Inteligencia</label>
 				</div>
 				<div>
@@ -336,7 +360,7 @@ useEffect(() => {
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Strength"
-					/>
+					/>&nbsp;
 					<label>Fuerza</label>
 				</div>
 				<div>
@@ -344,7 +368,7 @@ useEffect(() => {
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Speed"
-					/>
+					/>&nbsp;
 					<label>Velocidad</label>
 				</div>
 				<div>
@@ -352,7 +376,7 @@ useEffect(() => {
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Durability"
-					/>
+					/>&nbsp;
 					<label>Resistencia</label>
 				</div>
 				<div>
@@ -360,7 +384,7 @@ useEffect(() => {
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Energy_Projection"
-					/>
+					/>&nbsp;
 					<label>Energía proyectada</label>
 				</div>
 				<div>
@@ -368,17 +392,30 @@ useEffect(() => {
 						name="atributos_clickeados"
 						type="checkbox"
 						value="Fighting_Ability"
-					/>
+					/>&nbsp;
 					<label>Habilidad de combate</label>
 				</div>
+				</div>
+				<br />
+				<button type="submit"><h4>Click acá para continuar</h4></button>
 
-				<button type="submit">Click acá para continuar</button>
-
+				<br /><br /><br /><br />
 				<h4>
-					Así quedó tu equipo: {nombres_clickeados[0]}  {nombres_clickeados[1]}
-					nuevo:
+					Así quedó tu equipo: 
 				</h4>
 					<div className="flexBox_TJs">
+					<div className="tj">
+					<div className="tj_img">
+					<img
+							className="imagen_avenger"
+							src="././usuario.png"
+							alt="Imagen Super Usuario"
+					/>
+					</div>
+					<div className="tj_name_input">
+					<p>{usuario}</p>
+					</div>
+					</div>
 					{vengadores_usuario_final.map((element) => (
 					<div className="tj">
 					<div className="tj_img">
@@ -392,24 +429,78 @@ useEffect(() => {
 					<p>{data[element].Name}</p>
 					</div>
 					</div>
-					))}	
-					<div className="tj">
-					<div className="tj_img">
-					<img
-							className="imagen_avenger"
-							src="././usuario.png"
-							alt="Imagen Super Usuario"
-					/>
-					</div>
-					<div className="tj_name_input">
-					<p>{usuario}</p>
-					</div>
-					</div>
+					))}
 					</div>
 
-				<h4>Cada Avenger tiene una tarjeta de poderes, con estas se hará una tarjeta única y representativa por equipo promediando en cada uno de los poderes de sus integrantes.</h4>
-				<h4>WINNER</h4>
-				<h4>GAME OVER</h4>
+				<h4>Cada Avenger tiene una tarjeta de poderes, con ellas se hizo una tarjeta única y representativa</h4>
+				<h4>por equipo promediando en cada uno de los poderes de sus integrantes.</h4>
+				<div className="linea_divisoria"> </div>
+				<h2>"Estas son las tarjetas de poder finales de cada equipo:</h2>
+				
+				<div className="cruce_tarjetas_equipos">				
+				<div className="tarjeta_equipos">				
+				<div className="tarjetas_equipos_poderes">				
+				<p>Inteligencia: {tarjeta_compu[0]}</p>
+				<p>Fuerza: {tarjeta_compu[1]}</p>
+				<p>Velocidad: {tarjeta_compu[2]}</p>
+				<p>Resistencia: {tarjeta_compu[3]}</p>
+				<p>Energía proyectada: {tarjeta_compu[4]}</p>
+				<p>Habilidad de combate: {tarjeta_compu[5]}</p>
+				</div>
+				<div className="tarjeta_equipos_nombre_imagen">	
+				<div className="tarjeta_equipos_nombre">
+				<h3>EQUIPO COMPU</h3>
+				</div>
+				<div className="tarjeta_equipos_imagen">
+				<p><img className="solo_imagen_compu" src="../supercompu.png" alt="Compu"></img></p>
+				</div>
+				</div>
+				</div>
+				
+				<div className="versus">
+				<p><img src="../versus.png" alt="vs." width="90"></img></p>
+				</div>
+				
+				<div className="tarjeta_equipos">
+				<div className="tarjetas_equipos_poderes">				
+				<p>Inteligencia: {tarjeta_usuario[0]}</p>
+				<p>Fuerza: {tarjeta_usuario[1]}</p>
+				<p>Velocidad: {tarjeta_usuario[2]}</p>
+				<p>Resistencia: {tarjeta_usuario[3]}</p>
+				<p>Energía proyectada: {tarjeta_usuario[4]}</p>
+				<p>Habilidad de combate: {tarjeta_usuario[5]}</p>
+				</div>
+				<div className="tarjeta_equipos_nombre_imagen">	
+				<div className="tarjeta_equipos_nombre">
+				<h3>TU EQUIPO</h3>
+				</div>
+				<div className="tarjeta_equipos_imagen">
+				<p><img src="../usuario.png" alt="Usuario"></img></p>
+				</div>
+				</div>
+				</div>
+				</div>
+				<br /><br />
+				<h2>"Pasá el cursor por abajo para descubrir al ganador!</h2>
+				
+				<div className="imagen_ganador">
+					<img
+						src={imagen_ganador}
+						alt="Imagen Super Usuario"
+					/>
+					<br /><br /><br />
+					<h2>GAME OVER</h2>
+				</div>
+
+				<div className="start">
+		
+				<Link to="/PaginaJuego" onClick="scroll(0, 100);"> 
+					<p><img src="../start.png" alt="Botón Start Game" width="125"></img></p>
+				</Link>
+	
+				</div>
+								
+				
 			</form>
 		</>
 	);

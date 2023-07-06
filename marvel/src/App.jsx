@@ -58,7 +58,7 @@ function App() {
 						<Route path="/login" element={<Login/>}/>
 						<Route path="/register" element={<Register/>}/>
 						<Route path="/reset" element={<Reset/>}/>
-						<Route path="/paginajuego" element={<Juego />} />
+						<Route path="/paginajuego" element={<PaginaJuego />} />
 					</Routes>
 					<Footer />
 				</BrowserRouter>

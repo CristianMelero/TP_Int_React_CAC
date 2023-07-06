@@ -47,7 +47,7 @@ export const PaginaJuego = () => {
 		</div> 
 		<div className="start">
 		
-			<Link to="/juego">
+			<Link to="/juego" onClick="scroll(0, 100);">
 				<p><img src="../start.png" alt="Botón Start Game" width="125"></img></p>
 			</Link>
 		

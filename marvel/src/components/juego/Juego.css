@@ -4,7 +4,7 @@
     margin-block: 3%;
     width: 100%;
     text-align: center;
-    padding-inline: 25%;
+    padding-inline: 25%; 
 }
 .tj{
     margin-inline: 2.5%;
@@ -46,4 +46,118 @@
 }
 h4 {
     text-align: center;
+}
+
+
+.atributos_clickeados{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-size:x-large;
+    margin-block: 3%;
+    color: #ED1515;
+    font-weight: bold;
+    border-left: black solid 1px;
+    padding-left: 2%;
+    border-right: black solid 1px;
+    padding-right: 2%;
+}
+.atributos_clickeados div{
+    margin-block: 3%;
+}
+.imagen_ganador{
+    width: 22.5%;
+    Opacity:0;
+    text-align: center;
+    margin-inline: auto;
+    margin-block: 5%;
+    border: black solid 3px;
+}
+.imagen_ganador:hover{
+    width: 22.5%;
+    Opacity:1;
+    text-align: center;
+    margin-inline: auto;
+    margin-block: 5%;
+    border: black solid 3px;
+}
+.imagen_ganador img{
+    width: 100%;
+    Opacity:0;
+    text-align: center;
+    margin-inline: auto;
+}
+.imagen_ganador img:hover{
+    width: 100%;
+    Opacity:1;
+    text-align: center;
+    margin-inline: auto;
+}
+.cruce_tarjetas_equipos{
+    margin-block: 3%;
+    display: flex;
+    width: 75%;
+    margin-inline: 40%;
+}
+.cruce_tarjetas_equipos h3{
+    font-size:large;
+    font-weight:bold;
+    color:#ED1515;
+    text-align: center;
+}
+.linea_divisoria{
+    border-top: #202020 dashed 2px;
+    width: 50%;
+    height: 2px;
+    margin-block: 5%;
+}
+.tarjeta_equipos{
+    width: 100%;
+    display: flex;
+    border: #ED1515 solid 4px;
+}
+.tarjetas_equipos_poderes{
+    background-color: #202020;
+    color: white;
+    width: 100%;
+    padding-top: 4%;
+}
+.tarjetas_equipos_poderes p{
+    margin-block:0%;
+    font-size: medium;
+
+}
+.tarjeta_equipos_nombre_imagen{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.tarjeta_equipos_nombre_imagen{
+    margin-top: 2%; 
+}
+.tarjeta_equipos_nombre_imagen img{
+    border-radius: 50%;
+    border: #202020 solid 2.25px;
+    max-width: 125px;
+    min-width: 125px;
+    max-height: 125px;
+    min-height: 125px;
+}
+.solo_imagen_compu{
+    width: 100%;
+    margin-top: 5%;
+}
+.versus{
+    width: 30%;
+    align-self: center;
+    justify-self: center;
+    margin-inline: 7.5%;
+}
+.start{
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }

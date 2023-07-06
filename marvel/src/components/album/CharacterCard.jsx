@@ -11,7 +11,7 @@ export const CharacterCard = ({ character }) => {
 					variant="top"
 					src={imgURL}
 					alt={character.name}
-					style={{ height: "300px", objectFit: "cover" }}
+					style={{ height: "300px", objectFit: "fill" }}
 				/>
 				<Card.Body>
 					<Card.Title

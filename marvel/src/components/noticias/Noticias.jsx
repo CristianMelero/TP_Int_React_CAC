@@ -45,7 +45,7 @@ export const Noticias = () => {
 							<Card.Title>{noticia.titulo}</Card.Title>
 							<br></br>
 							<Card.Text>{noticia.descripcion.substring(0, 100)}...</Card.Text>
-							<Link to={`noticia/${noticia.id}`}><Button variant="danger" class="btn btn-outline-dark">Leer más</Button></Link>
+							<Link to={`noticia/${noticia.id}`}><Button variant="danger" className="btn btn-outline-dark">Leer más</Button></Link>
 						</Card.Body>
 					</Card>
 				))}

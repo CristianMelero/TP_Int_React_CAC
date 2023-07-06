@@ -10,10 +10,9 @@ function UncontrolledExample() {
 					alt="First slide"
 				/>
 				<Carousel.Caption>
-					<h3>First slide label</h3>
+					<h3>Descubre al nuevo villano de la saga</h3>
 					<p>
-						Nulla vitae elit libero, a pharetra augue mollis
-						interdum.
+						En el próximo lanzamiento un villano aparecerá para modificar las reglas del juego
 					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
@@ -25,9 +24,9 @@ function UncontrolledExample() {
 				/>
 
 				<Carousel.Caption>
-					<h3>Second slide label</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					<h3 style={{color: "black"}}>Nuevos personajes en nuestra tienda online</h3>
+					<p  style={{color: "black"}}>
+						Ya están disponibles los coleccionables de Advengers
 					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
@@ -39,10 +38,9 @@ function UncontrolledExample() {
 				/>
 
 				<Carousel.Caption>
-					<h3>Third slide label</h3>
-					<p>
-						Praesent commodo cursus magna, vel scelerisque nisl
-						consectetur.
+					<h3>Capitana Marvel</h3>
+					<p style={{color: "black"}}>
+						Descubre todo acerca de la última película de Marvel
 					</p>
 				</Carousel.Caption>
 			</Carousel.Item>

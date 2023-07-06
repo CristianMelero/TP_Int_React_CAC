@@ -48,11 +48,11 @@ export const Noticia = () => {
 
   return (
     <>
-      <div class="main">
-        <div class="noticia-container">
-          <h1 class="titulo">{titulo}</h1>
+      <div className="main">
+        <div className="noticia-container">
+          <h1 className="titulo">{titulo}</h1>
           <img src={foto} width="1000"></img>
-          <p class="noticia-texto">
+          <p className="noticia-texto">
             {descripcion}
           </p>
         </div>

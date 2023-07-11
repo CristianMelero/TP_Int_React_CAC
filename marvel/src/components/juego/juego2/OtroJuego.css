@@ -47,8 +47,10 @@
 h4 {
     text-align: center;
 }
-
-
+h2 {
+    text-align: center;
+    margin-block: 5%;
+}
 .atributos_clickeados{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -67,37 +69,37 @@ h4 {
 }
 .imagen_ganador{
     width: 22.5%;
-    Opacity:0;
+    Opacity:1;
     text-align: center;
     margin-inline: auto;
     margin-block: 5%;
     border: black solid 3px;
 }
-.imagen_ganador:hover{
+/* .imagen_ganador:hover{
     width: 22.5%;
     Opacity:1;
     text-align: center;
     margin-inline: auto;
     margin-block: 5%;
     border: black solid 3px;
-}
+} */
 .imagen_ganador img{
-    width: 100%;
-    Opacity:0;
-    text-align: center;
-    margin-inline: auto;
-}
-.imagen_ganador img:hover{
     width: 100%;
     Opacity:1;
     text-align: center;
     margin-inline: auto;
 }
+/* .imagen_ganador img:hover{
+    width: 100%;
+    Opacity:1;
+    text-align: center;
+    margin-inline: auto;
+} */
 .cruce_tarjetas_equipos{
     margin-block: 3%;
     display: flex;
     width: 75%;
-    margin-inline: 40%;
+    margin-inline: 10%;
 }
 .cruce_tarjetas_equipos h3{
     font-size:large;
@@ -160,4 +162,9 @@ h4 {
     text-align: center;
     margin-top: 0%;
     margin-bottom: 0%;
+    margin-right: 0%;
+}
+button{
+    background-color: white;
+    border: white;
 }

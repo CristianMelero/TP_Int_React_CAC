@@ -5,7 +5,7 @@ import { Inicio } from "./components/Inicio";
 import { Album } from "./components/album/Album";
 import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
-import { Juego } from "./components/juego/Juego";
+import { Juego } from "./components/juego/juego1/Juego";
 import { LinksInteres } from "./components/LinksInteres";
 import { Login } from "./components/autenticación/Login";
 import { Register } from "./components/autenticación/Register";
@@ -23,7 +23,7 @@ import { MediosPagos } from "./components/tienda/MediosPagos";
 import { ItemDetailContainer } from "./components/tienda/ItemDetailContainer";
 import { CharacterDetail } from "./components/album/PersonajeDetalle";
 import { PaginaJuego } from "./components/juego/PaginaJuego";
-import { OtroJuego } from "./components/juego/OtroJuego";
+import { OtroJuego } from "./components/juego/juego2/OtroJuego";
 
 function App() {
 	return (

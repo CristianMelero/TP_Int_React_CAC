@@ -19,6 +19,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "reactstrap": "^9.2.0",
     "sweetalert2": "^11.7.12",
     "web-vitals": "^2.1.4"

@@ -133,39 +133,6 @@ export const Juego = () => {
 	//CREAR UNA VARIABLE QUE REPRESENTE A LA IMAGEN DEL GANADOR
 	const [imagen_ganador, setImagen_ganador] = useState();
 
-
-
-	//FUNCION PARA DEFINIR EL GANADOR
-	const luchar = () => {
-		//CRUZAR DATOS PARA OBTENER EL RESULTADO:
-		var resultado;
-		var ptos_usuario = 0;
-		var ptos_computadora = 0;
-
-		tarjeta_compu.forEach((element, i) => {
-			if (tarjeta_usuario[i] > tarjeta_compu[i]) {
-				ptos_usuario += 1;
-			} else {
-				ptos_computadora += 1;
-			}
-		});
-
-		if (ptos_usuario > ptos_computadora) {
-			resultado = "usuario";
-			setImagen_ganador("././usuario.png");
-		} else {
-			if (ptos_usuario < ptos_computadora) {
-				resultado = "compu";
-				setImagen_ganador("././supercompu.png");
-			} else {
-				resultado = "empate";
-				setImagen_ganador("././empate.png");
-			}
-		}
-		// console.log(resultado);
-		setGanador(resultado);
-	};
-
 	return (
 		<>
 			{/*//PINTAR EQUIPO MAQUINA EN PANTALLA*/}
@@ -259,7 +226,8 @@ export const Juego = () => {
 						tarjeta_usuario={tarjeta_usuario}
 						setPaso4={setPaso4}
 						setPaso6={setPaso6}
-						luchar={luchar}
+						setImagen_ganador={setImagen_ganador}
+						setGanador={setGanador}
 					/>
 				</Element>
 			)}

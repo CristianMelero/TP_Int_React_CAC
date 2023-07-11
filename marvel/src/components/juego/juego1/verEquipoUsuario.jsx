@@ -29,7 +29,7 @@ export const EquipoUsuario = ({
 					<div className="tj_img">
 						<img
 							className="imagen_avenger"
-							src="././usuario.png"
+							src="/img/usuario.png"
 							alt="Imagen Super Usuario"
 						/>
 					</div>

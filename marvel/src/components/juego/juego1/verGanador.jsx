@@ -24,7 +24,7 @@ export const Ganador = ({ imagen_ganador, ganador }) => {
 			<div className="start">
 				<img
 					onClick={handleButton}
-					src="../start.png"
+					src="/img/start.png"
 					alt="Botón Start Game"
 					width="125"></img>
 			</div>

@@ -26,14 +26,14 @@ export const TarjetasFinales = ({
 	
 			if (ptos_usuario > ptos_computadora) {
 				resultado = "usuario";
-				setImagen_ganador("././usuario.png");
+				setImagen_ganador("/img/usuario.png");
 			} else {
 				if (ptos_usuario < ptos_computadora) {
 					resultado = "compu";
-					setImagen_ganador("././supercompu.png");
+					setImagen_ganador("/img/supercompu.png");
 				} else {
 					resultado = "empate";
-					setImagen_ganador("././empate.png");
+					setImagen_ganador("/img/empate.png");
 				}
 			}
 			// console.log(resultado);
@@ -75,14 +75,14 @@ export const TarjetasFinales = ({
 						<div className="tarjeta_equipos_imagen">
 							<img
 								className="solo_imagen_compu"
-								src="../supercompu.png"
+								src="/img/supercompu.png"
 								alt="Compu"></img>
 						</div>
 					</div>
 				</div>
 
 				<div className="versus">
-					<img src="../versus.png" alt="vs." width="90"></img>
+					<img src="/img/versus.png" alt="vs." width="90"></img>
 				</div>
 
 				<div className="tarjeta_equipos">
@@ -99,7 +99,7 @@ export const TarjetasFinales = ({
 							<h3>TU EQUIPO</h3>
 						</div>
 						<div className="tarjeta_equipos_imagen">
-							<img src="../usuario.png" alt="Usuario"></img>
+							<img src="/img/usuario.png" alt="Usuario"></img>
 						</div>
 					</div>
 				</div>
@@ -107,7 +107,7 @@ export const TarjetasFinales = ({
 			<div className="start">
 				<img
 					onClick={handleNext}
-					src="../boton_fight.png"
+					src="/img/boton_fight.png"
 					alt="Botón luchar"
 					width="250px"></img>
 			</div>

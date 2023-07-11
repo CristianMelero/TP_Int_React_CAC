@@ -1,0 +1,20 @@
+.pagination .active>.page-link, .page-link.active {
+    color: #711111;
+    background-color: #be8068;
+    border-color: #711111;
+}
+
+.pagination .page-link {
+    color: #711111;
+}
+
+.pagination .page-link:hover {
+    color: #711111;
+    background-color: #dec1b5;;
+}
+
+.pagination .page-link:focus {
+    color: #dec1b5;
+    background-color: #711111;
+    box-shadow: 0 0 0 0.25rem rgb(253 13 51 / 15%);
+}

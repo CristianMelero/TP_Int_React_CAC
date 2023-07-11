@@ -24,7 +24,7 @@ export const Header = () => {
 		<Navbar bg="dark" variant="dark" expand="lg">
 			<Container>
 				<Navbar.Brand>
-					<img src="../marvel-comics-logo.png" alt="Logo de Marvel" width="100"></img>
+					<img src="/img/marvel-comics-logo.png" alt="Logo de Marvel" width="100"></img>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">

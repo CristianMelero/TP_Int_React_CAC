@@ -1,4 +1,5 @@
 import Pagination from "react-bootstrap/Pagination";
+import "./pagination.css"
 
 export const Paginacion = ({ currentPage, totalPages, setCurrentPage }) => {
 	const previousPage = () => {

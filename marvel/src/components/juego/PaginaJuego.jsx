@@ -1,9 +1,4 @@
-import { Header } from "../../components/Header";
-import Container from "react-bootstrap/Container";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Juego } from "./juego1/Juego";
 import "./PaginaJuego.css";
 
 export const PaginaJuego = () => {
@@ -16,7 +11,7 @@ export const PaginaJuego = () => {
 			<div className="logoMarvel">
 				<div>
 					<img
-						src="../logoMarvel.png"
+						src="/img/logoMarvel.png"
 						alt="Logo Marvel"
 						width="250"></img>
 				</div>
@@ -24,7 +19,7 @@ export const PaginaJuego = () => {
 			<div className="imagenJuego">
 				<div>
 					<img
-						src="../imagenJuego.png"
+						src="/img/imagenJuego.png"
 						alt="Botón Start Game"
 						width="1000"></img>
 				</div>
@@ -32,7 +27,7 @@ export const PaginaJuego = () => {
 			<div className="instrucciones">
 				<div>
 					<img
-						src="../instrucciones.png"
+						src="/img/instrucciones.png"
 						alt="Botón Start Game"
 						width="200"></img>
 				</div>
@@ -43,23 +38,23 @@ export const PaginaJuego = () => {
 					<br />
 					<div>
 						<img
-							src="../heroe_usuarioTJ.png"
+							src="/img/heroe_usuarioTJ.png"
 							alt="Héroe"
 							width="200"></img>
 					</div>
 					<div>
 						<img
-							src="../ironman_TJ.png"
+							src="/img/ironman_TJ.png"
 							alt="Iron Man"
 							width="200"></img>
 					</div>
 					<div>
-						<img src="../thor_TJ.png" alt="Thor" width="200"></img>
+						<img src="/img/thor_TJ.png" alt="Thor" width="200"></img>
 					</div>
 				</div>
 				<div className="versus">
 					<div>
-						<img src="../versus.png" alt="vs." width="150"></img>
+						<img src="/img/versus.png" alt="vs." width="150"></img>
 					</div>
 				</div>
 				<div>
@@ -67,19 +62,19 @@ export const PaginaJuego = () => {
 					<br />
 					<div>
 						<img
-							src="../heroe_azar.png"
+							src="/img/heroe_azar.png"
 							alt="vs."
 							width="200"></img>
 					</div>
 					<div>
 						<img
-							src="../heroe_azar.png"
+							src="/img/heroe_azar.png"
 							alt="vs."
 							width="200"></img>
 					</div>
 					<div>
 						<img
-							src="../heroe_azar.png"
+							src="/img/heroe_azar.png"
 							alt="vs."
 							width="200"></img>
 					</div>
@@ -88,7 +83,7 @@ export const PaginaJuego = () => {
 			<div className="start">
 				<Link to="/juego" onClick={handleMove}>
 					<img
-						src="../start.png"
+						src="/img/start.png"
 						alt="Botón Start Game"
 						width="125"></img>
 				</Link>

@@ -5,38 +5,8 @@ export const TarjetasFinales = ({
 	tarjeta_usuario,
 	setPaso4,
 	setPaso6,
+	luchar,
 }) => {
-
-		//FUNCION PARA DEFINIR EL GANADOR
-		const luchar = () => {
-			//CRUZAR DATOS PARA OBTENER EL RESULTADO:
-			var resultado;
-			var ptos_usuario = 0;
-			var ptos_computadora = 0;
-	
-			tarjeta_compu.forEach((element, i) => {
-				if (tarjeta_usuario[i] > tarjeta_compu[i]) {
-					ptos_usuario += 1;
-				} else {
-					ptos_computadora += 1;
-				}
-			});
-	
-			if (ptos_usuario > ptos_computadora) {
-				resultado = "usuario";
-				setImagen_ganador("././usuario.png");
-			} else {
-				if (ptos_usuario < ptos_computadora) {
-					resultado = "compu";
-					setImagen_ganador("././supercompu.png");
-				} else {
-					resultado = "empate";
-					setImagen_ganador("././empate.png");
-				}
-			}
-			// console.log(resultado);
-			setGanador(resultado);
-		};
 
 	const scrollToPaso6 = () => {
 		return new Promise((resolve) => {
@@ -44,6 +14,7 @@ export const TarjetasFinales = ({
 			resolve();
 		});
 	};
+
 
 	const handleNext = async () => {
 		setPaso4(false);

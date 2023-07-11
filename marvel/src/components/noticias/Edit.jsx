@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Breadcrumb } from "react-bootstrap";
 import { getDoc, updateDoc, doc } from "firebase/firestore";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { db } from '../../firebaseConfig/firebase.js';
 
 export const Edit = () => {
@@ -43,6 +43,12 @@ export const Edit = () => {
     return (
         <>
             <div class="main">
+                <Breadcrumb>
+                    <Breadcrumb.Item><Link to="/">Inicio</Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="/noticias">Noticias</Link></Breadcrumb.Item>
+                    <Breadcrumb.Item active>Editar noticia</Breadcrumb.Item>
+                </Breadcrumb>
+
                 <div className="container containerNoticia">
                     <div className="row">
                         <div className="col">

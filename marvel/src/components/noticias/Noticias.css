@@ -6,3 +6,18 @@
 .containerNoticia input, textarea.form-control {
     width: 1000px;
 }
+
+.breadcrumb {
+    margin: 0 0 2% 2%;
+}
+
+.breadcrumb-item {
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.breadcrumb-item a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}

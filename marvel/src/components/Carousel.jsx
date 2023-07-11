@@ -23,10 +23,10 @@ function UncontrolledExample() {
 					alt="Second slide"
 				/>
 
-				<Carousel.Caption>
-					<h3 style={{color: "black"}}>Nuevos personajes en nuestra tienda online</h3>
-					<p  style={{color: "black"}}>
-						Ya están disponibles los coleccionables de Advengers
+				<Carousel.Caption className="c2">
+					<h3>Nuevos personajes en nuestra tienda online</h3>
+					<p>
+						Ya están disponibles los coleccionables de Avengers
 					</p>
 				</Carousel.Caption>
 			</Carousel.Item>
@@ -39,7 +39,7 @@ function UncontrolledExample() {
 
 				<Carousel.Caption>
 					<h3>Capitana Marvel</h3>
-					<p style={{color: "black"}}>
+					<p>
 						Descubre todo acerca de la última película de Marvel
 					</p>
 				</Carousel.Caption>

@@ -3,7 +3,9 @@ import { getDoc, deleteDoc, doc } from "firebase/firestore";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { auth, db } from '../../firebaseConfig/firebase.js';
 import Button from 'react-bootstrap/Button';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useAuthState } from "react-firebase-hooks/auth";
+import "./Noticias.css";
 
 export const Noticia = () => {
   const [user] = useAuthState(auth);
@@ -49,6 +51,12 @@ export const Noticia = () => {
   return (
     <>
       <div className="main">
+        <Breadcrumb>
+          <Breadcrumb.Item><Link to="/">Inicio</Link></Breadcrumb.Item>
+          <Breadcrumb.Item><Link to="/noticias">Noticias</Link></Breadcrumb.Item>
+          <Breadcrumb.Item active>{titulo}</Breadcrumb.Item>
+        </Breadcrumb>
+
         <div className="noticia-container">
           <h1 className="titulo">{titulo}</h1>
           <img src={foto} width="1000"></img>

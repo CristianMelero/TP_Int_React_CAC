@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"
+import { Button, Form, Breadcrumb } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom"
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig/firebase.js";
 import "./Noticias.css";
@@ -26,6 +26,12 @@ export const Create = () => {
 
     return (
         <div class="main">
+            <Breadcrumb>
+                <Breadcrumb.Item><Link to="/">Inicio</Link></Breadcrumb.Item>
+                <Breadcrumb.Item><Link to="/noticias">Noticias</Link></Breadcrumb.Item>
+                <Breadcrumb.Item active>Crear noticia</Breadcrumb.Item>
+            </Breadcrumb>
+
             <br></br>
             <div className="container containerNoticia">
                 <div className="row">
@@ -45,9 +51,9 @@ export const Create = () => {
                             <div className="mb-3">
                                 <Form.Label>Imagen URL:</Form.Label>
                                 <Form.Control
-                                value={foto}
-                                onChange={(e) => setFoto(e.target.value)}
-                                type="text"></Form.Control>
+                                    value={foto}
+                                    onChange={(e) => setFoto(e.target.value)}
+                                    type="text"></Form.Control>
                             </div>
 
                             <div className="mb-3">

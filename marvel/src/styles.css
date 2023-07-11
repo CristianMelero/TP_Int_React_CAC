@@ -94,10 +94,26 @@
 
 .btngroup {
     display: flex;
+    align-items: center;
     gap: 1%;
     margin: 2% 5%;
 }
 
+.carousel-caption h3, .carousel-caption p {
+    text-shadow: 1.5px 0 black, -1.5px 0 black, 0 1.5px black, 0 -1.5px black,
+             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+
 .carousel-caption {
     font-size: larger;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+}
+
+.c2 h3, .c2 p {
+    color: black;
+    text-shadow: 1.5px 0 #fff, -1.5px 0 #fff, 0 1.5px #fff, 0 -1.5px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 2px 2px 20px;
 }

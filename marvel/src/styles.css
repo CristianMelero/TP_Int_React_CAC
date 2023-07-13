@@ -25,7 +25,7 @@
 
 .titulo {
     text-align: center;
-    margin: 1%;
+    padding: 1%;
 }
 
 .noticias {
@@ -116,4 +116,22 @@
     color: black;
     text-shadow: 1.5px 0 #fff, -1.5px 0 #fff, 0 1.5px #fff, 0 -1.5px #fff,
              1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 2px 2px 20px;
+}
+
+.nosotrosTexto {
+    padding: 2% 5%;
+    font-size: 18px;
+}
+
+.nosotrosCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nosotrosCards .btn {
+    margin-right: 5px;
 }

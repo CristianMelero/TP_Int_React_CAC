@@ -6,7 +6,7 @@ export const Contacto = () => {
             <h1 className="m-4" style={{ fontSize:"55px" }}>
                 <strong>CONTACTO</strong>
             </h1 >  
-            <p style={{ fontSize:"22px" }}> Ingrese los datos personales requeridos y a continuación su consulta.La misma será respondida a la brevedad</p>
+            <p style={{ fontSize:"22px" }}> Ingrese los datos personales requeridos y a continuación su consulta. La misma será respondida a la brevedad.</p>
         </div>
         <form className="row g-3 needs-validation m-4" novalidate>
             <div className="col-md-4">

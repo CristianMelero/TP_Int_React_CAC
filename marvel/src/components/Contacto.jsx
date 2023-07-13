@@ -1,63 +1,63 @@
-import { Ad } from "./Ad";
 
 export const Contacto = () => {
 	return (
     <>
-        <div className="p-3 text-light" style={{backgroundColor:"coral"}}>
-            <h1>
+        <div className="p-3 text-light text-center" style={{ backgroundColor: "coral"}}>
+            <h1 className="m-4" style={{ fontSize:"55px" }}>
                 <strong>CONTACTO</strong>
-            </h1>
-            <p> Ingrese los datos personales requeridos y a continuación su consulta. La misma será respondida a la brevedad</p>
+            </h1 >  
+            <p style={{ fontSize:"22px" }}> Ingrese los datos personales requeridos y a continuación su consulta.La misma será respondida a la brevedad</p>
         </div>
-	    <div className="bg-dark">
-	    	<div className="container">
-                <div className="row justify-content-between ">
-                    
-                        <div className="col-sm-10 col-md-12 col-lg-6">
-                        <form className="d-flex flex-column ">
-                            <div className="mb-3 mt-4  text-center">
-                                <label for="formGroupExampleInput" className="form-label fs-2 text-light">
-                                    <strong>Nombre y Apellido</strong>
-                                </label>
-                                <input type="text" className="form-control" id="formGroupExampleInput"/>
-                            </div>
+        <form className="row g-3 needs-validation m-4" novalidate>
+            <div className="col-md-4">
+                <label for="validationCustom01" class="form-label">Nombre y Apellido</label>
+                <input type="text" className="form-control" id="validationCustom01"  required/>
+                <div className="valid-feedback">
+                Looks good!
+                </div>
+            </div>
+            <div className="col-md-4">
+                <label for="validationCustom02" className="form-label">E-mail</label>
+                <input type="email" className="form-control" id="validationCustom02" placeholder="name@example.com" required/>
+                <div className="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div className="col-md-4">
+                <label for="validationCustom01" class="form-label">Teléfono</label>
+                <input type="text" className="form-control" id="validationCustom01"  required/>
+                <div className="valid-feedback">
+                Looks good!
+                </div>
+            </div>
             
-                            <div className="mb-2 text-center">
-                                <label for="exampleFormControlInput1" className="form-label fs-2 text-light">
-                                    <strong>E-mail</strong>
-                                </label>
-                                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-                            </div>
-            
-                            <div className="mb-2 text-center">
-                                <label for="formGroupExampleInput" className="form-label fs-2 text-light">
-                                    <strong>Teléfono</strong>
-                                </label>
-                                <input type="text" className="form-control" id="formGroupExampleInput"/>
-                            </div>
-        
-                            <div className="mb-2 mt-1">
-                                <label for="exampleFormControlTextarea1" className="form-label">
-                                    <textarea className="form-control" id="exampleFormControlTextarea1" placeholder="Escriba su consulta..." rows="6">
+            <div className="col-md-4">
+                <label for="validationCustom04" className="form-label">Seleccione el motivo de su consulta</label>
+                <select className="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Elegir...</option>
+                    <option>Juegos</option>
+                    <option>Tienda</option>
+                    <option>Personajes del album</option>
+                    <option>Otra</option>
+                </select>
+                <div className="invalid-feedback">
+                    Por favor elige una opción válida.
+                </div>
+            </div>
 
-									</textarea>
-								</label>
-                            </div>
-            
-                            <div className="align-self-end">
-                                <button type="submit" className="btn bg-secondary text-light m-3 mb-5 fs-5">
-                                    Enviar
-                                </button>
-                            </div>
-                        </form>
-        
-                    </div>
-					<div className="col-sm-12 col-md-12 col-lg-6">
-                        <Ad/>
-					</div>
-			</div>
-		</div>
-		</div>
+            <div className="col-md-4">
+            <label for="validationTextarea" className="form-label">Consulta</label>
+                <textarea className="form-control" id="validationTextarea" placeholder="Escriba su consulta..." rows={5} required></textarea>
+                <div className="invalid-feedback">
+                    Por favor ingresa un mensaje.
+                </div>
+            </div>
+
+
+            <div className="col-md-4 ">
+                <button className="btn btn-dark" type="submit">Enviar</button>
+            </div>
+</form>
     </>
   );
 };

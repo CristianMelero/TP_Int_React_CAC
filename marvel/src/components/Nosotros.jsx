@@ -17,12 +17,12 @@ export const Nosotros = () => {
 				<Card style={{ width: '20rem' }}>
 					<Card.Img variant="top" src="" />
 					<Card.Body>
-						<Card.Title>Nombre</Card.Title>
+						<Card.Title>Josefina Sofio Avogadro</Card.Title>
 						<Card.Text>
-							Puesto IT, descripción o rol en el proyecto
+							Diseñadora Multimedial & Comunicación digital e interactiva.
 						</Card.Text>
-						<Link to="/"><Button variant="danger">Enlace</Button></Link>
-						<Link to="/"><Button variant="danger">Enlace</Button></Link>
+						<Link to="https://www.linkedin.com/in/josefinasofio/"><Button variant="danger">LinkedIn</Button></Link>
+						<Link to="https://github.com/jsofio"><Button variant="danger">Github</Button></Link>
 					</Card.Body>
 				</Card>
 

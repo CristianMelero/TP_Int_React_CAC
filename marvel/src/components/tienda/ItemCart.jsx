@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import Icon from "@mdi/react";
 import { mdiCloseBox } from "@mdi/js";
-//import "./ItemCart.css"
+
 
 export const ItemCart = ({ item }) => {
 	const { removeItem } = useContext(CartContext);

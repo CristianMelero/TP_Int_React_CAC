@@ -27,14 +27,14 @@ export const Nosotros = () => {
 				</Card>
 
 				<Card style={{ width: '20rem' }}>
-					<Card.Img variant="top" src="" />
+					<Card.Img variant="top" src="https://avatars.githubusercontent.com/u/65016373?v=4" />
 					<Card.Body>
-						<Card.Title>Nombre</Card.Title>
+						<Card.Title>Cesia Cora</Card.Title>
 						<Card.Text>
-							Puesto IT, descripción o rol en el proyecto
+							Desarrolladora Web Fullstack
 						</Card.Text>
-						<Link to="/"><Button variant="danger">Enlace</Button></Link>
-						<Link to="/"><Button variant="danger">Enlace</Button></Link>
+						<Link to="https://linkedin.com/in/cesia-cora" target='_blank'><Button variant="danger">LinkedIn</Button></Link>
+						<Link to="https://github.com/cesia-cora" target='_blank'><Button variant="danger">Github</Button></Link>
 					</Card.Body>
 				</Card>
 

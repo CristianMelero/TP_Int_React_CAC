@@ -1,26 +1,8 @@
 import "./CardDetail.css";
-import { useContext, useState } from "react";
-import { CartContext } from "../../context/cartContext.jsx";
 import { ItemCount } from "./ItemCount";
 import { NavLink } from "react-router-dom";
-import Swal from "sweetalert2";
 
 export const CardDetail = ({ item }) => {
-	const { addToCart } = useContext(CartContext);
-	const [countCart, setCountCart] = useState([]);
-
-	//Suma de item
-	const onAdd = (quantity) => {
-		addToCart(item, quantity);
-		setCountCart(quantity);
-		Swal.fire({
-			position: "center",
-			icon: "success",
-			title: `${quantity} ${item.name} agregados al carrito`,
-			showConfirmButton: false,
-			timer: 1500,
-		});
-	};
 
 	return (
 		<div className="p-2 container">
@@ -39,7 +21,7 @@ export const CardDetail = ({ item }) => {
 					</h3>
 					<h5 className="priceCard text-light">${item.price}</h5>
 
-					<ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
+					<ItemCount initial={1} stock={item.stock} item={item} />
 
 					<NavLink
 						to={`/detail/${item.id}`}
@@ -50,8 +32,7 @@ export const CardDetail = ({ item }) => {
 							color: "#ffff",
 							textDecorationLine: "underline",
 						}}
-						onAdd={onAdd}
-						item={item}>
+						>
 						Ver detalles
 					</NavLink>
 				</div>

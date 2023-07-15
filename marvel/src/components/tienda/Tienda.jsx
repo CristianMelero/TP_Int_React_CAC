@@ -9,21 +9,19 @@ import { useParams } from "react-router-dom";
 import { ItemsList } from "./ItemsList";
 
 export const Tienda = () => {
-
 	const [items, setItems] = useState([]);
-	const [categoryItems, setCategoryItems] = useState(null)
+	const [categoryItems, setCategoryItems] = useState(null);
 	const [cargando, setCargando] = useState(true);
 
-	const itemsCollection = collection(db,"products")
+	const itemsCollection = collection(db, "products");
 
 	const { categoryId } = useParams();
-	console.log(categoryId)
 
 	//Lista de productos de Firebase
 	const getProducts = async () => {
 		const data = await getDocs(itemsCollection);
 		setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-		setCargando(false)
+		setCargando(false);
 	};
 
 	useEffect(() => {
@@ -31,9 +29,11 @@ export const Tienda = () => {
 	}, []);
 
 	useEffect(() => {
-		if(items.length > 0) {
-		const itemsOfCategory = items.filter(item => item.category === categoryId)
-		setCategoryItems(itemsOfCategory)
+		if (items.length > 0) {
+			const itemsOfCategory = items.filter(
+				(item) => item.category === categoryId,
+			);
+			setCategoryItems(itemsOfCategory);
 		}
 	}, [categoryId]);
 
@@ -51,11 +51,15 @@ export const Tienda = () => {
 			</div>
 			<div>
 				<div className=" bg-dark">
-					<DropdownTienda items={ items } />
+					<DropdownTienda items={items} />
 				</div>
 			</div>
-			{ categoryId && <p>Estas en la categoría <strong>{ categoryId }</strong></p>}
-			<ItemsList items={ categoryItems || items } />
+			{categoryId && (
+				<p>
+					Estas en la categoría <strong>{categoryId}</strong>
+				</p>
+			)}
+			<ItemsList items={categoryItems || items} />
 		</div>
 	);
 };

@@ -1,20 +1,15 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig/firebase";
-import { CartContext } from "../../context/cartContext";
 import { Spinner } from "../Spinner";
 import { DropdownTienda } from "./DropdownTienda";
 import { ItemCount } from "./ItemCount";
-import Swal from "sweetalert2";
-
 
 export const ItemDetailContainer = () => {
-	
 	//Vista del detalle del producto
 	const [item, setItem] = useState(null)
 	const [cargando, setCargando] = useState(true);
-	const { addToCart } = useContext(CartContext);
 
 	const { id } = useParams();
 
@@ -22,8 +17,8 @@ export const ItemDetailContainer = () => {
 		setCargando(true);
 		const productDoc = await getDoc(doc(db, "products", id));
 
-		if (productDoc.exists()) {;
-			setItem(productDoc.data())
+		if (productDoc.exists()) {
+			setItem({...productDoc.data(), id: id});
 			setCargando(false);
 		} else {
 			console.log("El producto no existe");
@@ -34,18 +29,6 @@ export const ItemDetailContainer = () => {
 		getProductsById(id);
 	}, []);
 
-	//Suma de item
-	const onAdd = (quantity) => {
-		addToCart(item, quantity);
-		Swal.fire({
-			position: "center",
-			icon: "success",
-			title: `${quantity} ${item.name} agregados al carrito`,
-			showConfirmButton: false,
-			timer: 1500,
-		});
-		
-	};
 
 	if (cargando) {
 		return <Spinner />;
@@ -73,10 +56,10 @@ export const ItemDetailContainer = () => {
 							<strong>$ {item.price} </strong>
 						</p>
 
-						<ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
+						<ItemCount initial={1} stock={item.stock} item={item}/>
 					</div>
 				</div>
-				<div class="card-footer text-muted">
+				<div className="card-footer text-muted">
 					<Link
 						className="pt-2 mt-3"
 						to="/tienda"

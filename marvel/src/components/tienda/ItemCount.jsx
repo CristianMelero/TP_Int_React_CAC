@@ -1,9 +1,13 @@
 import Icon from "@mdi/react";
 import { mdiPlusCircle, mdiMinusCircle } from "@mdi/js";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from "../../context/cartContext";
+import Swal from "sweetalert2";
 
-export const ItemCount = ({ initial, stock, onAdd }) => {
+
+export const ItemCount = ({ initial, stock, item }) => {
 	const [count, setCount] = useState(parseInt(initial));
+	const { addToCart } = useContext(CartContext);
 
 	//Contador
 
@@ -13,6 +17,19 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
 	const handleIncrement = () => {
 		setCount(count + 1);
 	};
+
+		//Suma de item
+		const onAdd = (quantity) => {
+			addToCart(item, quantity);
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title: `${quantity} ${item.name} agregados al carrito`,
+				showConfirmButton: false,
+				timer: 1500,
+			});
+			
+		};
 
 	useEffect(() => {
 		setCount(parseInt(initial));

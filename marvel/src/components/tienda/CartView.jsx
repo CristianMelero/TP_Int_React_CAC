@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext.jsx";
 import Icon from "@mdi/react";
-import { mdiCartVariant, mdiCartOff, mdiCartArrowRight, mdiDeleteEmpty } from "@mdi/js";
+import {
+	mdiCartVariant,
+	mdiCartOff,
+	mdiCartArrowRight,
+	mdiDeleteEmpty,
+} from "@mdi/js";
 import { ItemCart } from "./ItemCart.jsx";
 import { Link } from "react-router-dom";
 import { OrderForm } from "./OrderForm.jsx";
-
 
 export const CartView = () => {
 	const { cart, totalProducts, totalPrice, removeAll } =
@@ -80,7 +84,7 @@ export const CartView = () => {
 						</div>
 
 						<div className="col-lg-5 col-md-12">
-							<OrderForm/>
+							<OrderForm />
 						</div>
 					</div>
 				</div>

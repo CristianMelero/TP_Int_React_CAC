@@ -2,7 +2,6 @@
 import data from "../../../utils/marvel.json";
 import { useEffect, useState } from "react";
 import "./OtroJuego.css";
-import { Link } from "react-router-dom";
 
 // CREAR LA FUNCION CORRESPONDIENTE AL COMPONENTE JUEGO
 export const OtroJuego = () => {
@@ -95,10 +94,6 @@ export const OtroJuego = () => {
 			}
 		}
 	};
-	// }
-	// useEffect(() => {
-	// 	asignarAvenger1_poderes();
-	// }, []);
 
 	return (
 		<>
@@ -134,7 +129,7 @@ export const OtroJuego = () => {
 
 					<div className="versus">
 						<p>
-							<img src="../versus.png" alt="vs." width="90"></img>
+							<img src="/img/versus.png" alt="vs." width="90"></img>
 						</p>
 					</div>
 
@@ -171,7 +166,7 @@ export const OtroJuego = () => {
 						<h4>
 							<p>
 								<img
-									src="../start.png"
+									src="/img/start.png"
 									alt="Botón Start Game"
 									width="100"></img>
 							</p>

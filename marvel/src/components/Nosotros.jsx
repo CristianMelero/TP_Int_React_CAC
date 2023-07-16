@@ -40,33 +40,42 @@ export const Nosotros = () => {
 				<Card style={{ width: "20rem" }}>
 					<Card.Img
 						variant="top"
-						src="https://avatars.githubusercontent.com/u/112022207?v=4"
-						alt="Foto de Cristian Melero"
+						src="https://avatars.githubusercontent.com/u/65016373?v=4"
 					/>
 					<Card.Body>
-						<Card.Title>Cristian Abel Melero</Card.Title>
-						<Card.Text>Desarrollador FrontEnd con conocimientos en BackEnd</Card.Text>
-						<Link to="https://www.linkedin.com/in/crismelero/">
-							<Button variant="danger">Linkedin</Button>
+						<Card.Title>Cesia Cora</Card.Title>
+						<Card.Text>Desarrolladora Web Fullstack</Card.Text>
+						<Link
+							to="https://linkedin.com/in/cesia-cora"
+							target="_blank">
+							<Button variant="danger">LinkedIn</Button>
 						</Link>
-						<Link to="https://github.com/CristianMelero">
+						<Link
+							to="https://github.com/cesia-cora"
+							target="_blank">
 							<Button variant="danger">Github</Button>
 						</Link>
 					</Card.Body>
 				</Card>
 
 				<Card style={{ width: "20rem" }}>
-					<Card.Img variant="top" src="" />
+					<Card.Img
+						variant="top"
+						src="https://avatars.githubusercontent.com/u/112022207?v=4"
+						alt="Foto de Cristian Melero"
+					/>
 					<Card.Body>
-						<Card.Title>Nombre</Card.Title>
-						<Card.Text>
-							Puesto IT, descripción o rol en el proyecto
-						</Card.Text>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
+						<Card.Title>Cristian Abel Melero</Card.Title>
+						<Card.Text>Desarrollador Web Fullstack</Card.Text>
+						<Link
+							to="https://www.linkedin.com/in/crismelero/"
+							target="_blank">
+							<Button variant="danger">Linkedin</Button>
 						</Link>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
+						<Link
+							to="https://github.com/CristianMelero"
+							target="_blank">
+							<Button variant="danger">Github</Button>
 						</Link>
 					</Card.Body>
 				</Card>

@@ -147,22 +147,6 @@ export const Nosotros = () => {
 						</Link>
 					</Card.Body>
 				</Card>
-
-				<Card style={{ width: "20rem" }}>
-					<Card.Img variant="top" src="" />
-					<Card.Body>
-						<Card.Title>Nombre</Card.Title>
-						<Card.Text>
-							Puesto IT, descripción o rol en el proyecto
-						</Card.Text>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
-						</Link>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
-						</Link>
-					</Card.Body>
-				</Card>
 			</div>
 		</div>
 	);

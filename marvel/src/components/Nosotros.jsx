@@ -17,34 +17,32 @@ export const Nosotros = () => {
 			</p>
 
 			<div className="nosotrosCards">
-				<Card style={{ width: "20rem" }}>
+			<Card style={{ width: "20rem" }}>
 					<Card.Img
 						variant="top"
-						src="https://media.licdn.com/dms/image/D4D35AQEB9S-8Ehk-lA/profile-framedphoto-shrink_400_400/0/1677672236035?e=1690081200&v=beta&t=N5MNwIbAvDszSS3HD_7Uj9I_CL9L0_nIkOIFrt5XqaA"
+						src="https://avatars.githubusercontent.com/u/100171302?v=4"
+						alt="Foto de Cele Rodriguez"
 					/>
 					<Card.Body>
-						<Card.Title>Josefina Sofio Avogadro</Card.Title>
-						<Card.Text>
-							Diseñadora Multimedial & Comunicación digital e
-							interactiva.
-						</Card.Text>
+						<Card.Title>Cele Rodriguez</Card.Title>
+						<Card.Text>Desarrolladora Web Fullstack</Card.Text>
 						<Link
-							to="https://www.linkedin.com/in/josefinasofio/"
+							to="https://linkedin.com/"
 							target="_blank">
 							<Button variant="danger">LinkedIn</Button>
 						</Link>
-						<Link to="https://github.com/jsofio">
-							<Button variant="danger" target="_blank">
-								Github
-							</Button>
+						<Link
+							to="https://github.com/celerrodriguez"
+							target="_blank">
+							<Button variant="danger">Github</Button>
 						</Link>
 					</Card.Body>
 				</Card>
-
 				<Card style={{ width: "20rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/65016373?v=4"
+						alt="Foto de Cesia Cora"
 					/>
 					<Card.Body>
 						<Card.Title>Cesia Cora</Card.Title>
@@ -85,17 +83,67 @@ export const Nosotros = () => {
 				</Card>
 
 				<Card style={{ width: "20rem" }}>
-					<Card.Img variant="top" src="" />
+					<Card.Img
+						variant="top"
+						src="https://avatars.githubusercontent.com/u/49765163?v=4"
+						alt="Foto de Josefina Sofio"
+					/>
 					<Card.Body>
-						<Card.Title>Nombre</Card.Title>
+						<Card.Title>Josefina Sofio Avogadro</Card.Title>
 						<Card.Text>
-							Puesto IT, descripción o rol en el proyecto
+						Desarrolladora Web Fullstack
 						</Card.Text>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
+						<Link
+							to="https://www.linkedin.com/in/josefinasofio/"
+							target="_blank">
+							<Button variant="danger">LinkedIn</Button>
 						</Link>
-						<Link to="/">
-							<Button variant="danger">Enlace</Button>
+						<Link to="https://github.com/jsofio">
+							<Button variant="danger" target="_blank">
+								Github
+							</Button>
+						</Link>
+					</Card.Body>
+				</Card>
+
+				<Card style={{ width: "20rem" }}>
+					<Card.Img
+						variant="top"
+						src="https://avatars.githubusercontent.com/u/114850403?v=4"
+						alt="Foto de Jhosselyn Cortez"
+					/>
+					<Card.Body>
+						<Card.Title>Jhosselyn Cortez</Card.Title>
+						<Card.Text>
+						Desarrolladora Web Fullstack
+						</Card.Text>
+						<Link
+							to="https://www.linkedin.com/"
+							target="_blank">
+							<Button variant="danger">LinkedIn</Button>
+						</Link>
+						<Link to="https://github.com/JhosselynCC">
+							<Button variant="danger" target="_blank">
+								Github
+							</Button>
+						</Link>
+					</Card.Body>
+				</Card>
+
+				<Card style={{ width: "20rem" }}>
+					<Card.Img variant="top" src="https://media.licdn.com/dms/image/C4D03AQHXXa4vXGj44A/profile-displayphoto-shrink_200_200/0/1641812774092?e=1695254400&v=beta&t=TztcexsuL3lWfQmddLijNGH83v6thwap7gAhZhbCVVE"
+					alt="Foto de Nicolás Bilic"
+					/>
+					<Card.Body>
+						<Card.Title>Nicolás Bilic</Card.Title>
+						<Card.Text>
+							Desarrollador Web Fullstrack
+						</Card.Text>
+						<Link to="https://www.linkedin.com/in/nicolasbilic/">
+							<Button variant="danger">LinkedIn</Button>
+						</Link>
+						<Link to="https://github.com/facuvalenico">
+							<Button variant="danger">Github</Button>
 						</Link>
 					</Card.Body>
 				</Card>

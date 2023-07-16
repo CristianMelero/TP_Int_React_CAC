@@ -17,7 +17,7 @@ export const Nosotros = () => {
 			</p>
 
 			<div className="nosotrosCards">
-			<Card style={{ width: "20rem" }}>
+			<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/100171302?v=4"
@@ -38,7 +38,7 @@ export const Nosotros = () => {
 						</Link>
 					</Card.Body>
 				</Card>
-				<Card style={{ width: "20rem" }}>
+				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/65016373?v=4"
@@ -60,7 +60,7 @@ export const Nosotros = () => {
 					</Card.Body>
 				</Card>
 
-				<Card style={{ width: "20rem" }}>
+				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/112022207?v=4"
@@ -82,7 +82,7 @@ export const Nosotros = () => {
 					</Card.Body>
 				</Card>
 
-				<Card style={{ width: "20rem" }}>
+				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/49765163?v=4"
@@ -106,7 +106,7 @@ export const Nosotros = () => {
 					</Card.Body>
 				</Card>
 
-				<Card style={{ width: "20rem" }}>
+				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
 						src="https://avatars.githubusercontent.com/u/114850403?v=4"
@@ -130,7 +130,7 @@ export const Nosotros = () => {
 					</Card.Body>
 				</Card>
 
-				<Card style={{ width: "20rem" }}>
+				<Card style={{ width: "16rem" }}>
 					<Card.Img variant="top" src="https://media.licdn.com/dms/image/C4D03AQHXXa4vXGj44A/profile-displayphoto-shrink_200_200/0/1641812774092?e=1695254400&v=beta&t=TztcexsuL3lWfQmddLijNGH83v6thwap7gAhZhbCVVE"
 					alt="Foto de Nicolás Bilic"
 					/>

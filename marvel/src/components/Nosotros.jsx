@@ -28,11 +28,15 @@ export const Nosotros = () => {
 							Diseñadora Multimedial & Comunicación digital e
 							interactiva.
 						</Card.Text>
-						<Link to="https://www.linkedin.com/in/josefinasofio/">
+						<Link
+							to="https://www.linkedin.com/in/josefinasofio/"
+							target="_blank">
 							<Button variant="danger">LinkedIn</Button>
 						</Link>
 						<Link to="https://github.com/jsofio">
-							<Button variant="danger">Github</Button>
+							<Button variant="danger" target="_blank">
+								Github
+							</Button>
 						</Link>
 					</Card.Body>
 				</Card>

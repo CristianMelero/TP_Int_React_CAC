@@ -24,10 +24,10 @@ export const Nosotros = () => {
 						alt="Foto de Cele Rodriguez"
 					/>
 					<Card.Body>
-						<Card.Title>Cele Rodriguez</Card.Title>
+						<Card.Title>Celeste Rodriguez</Card.Title>
 						<Card.Text>Desarrolladora Web Fullstack</Card.Text>
 						<Link
-							to="https://linkedin.com/"
+							to="https://www.linkedin.com/in/maria-celeste-rodriguez-petela-983b67234/"
 							target="_blank">
 							<Button variant="danger">LinkedIn</Button>
 						</Link>
@@ -59,7 +59,6 @@ export const Nosotros = () => {
 						</Link>
 					</Card.Body>
 				</Card>
-
 				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
@@ -81,7 +80,29 @@ export const Nosotros = () => {
 						</Link>
 					</Card.Body>
 				</Card>
-
+				<Card style={{ width: "16rem" }}>
+					<Card.Img
+						variant="top"
+						src="https://media.licdn.com/dms/image/C4E03AQEZ-CanEV1CHw/profile-displayphoto-shrink_200_200/0/1530110483980?e=1695254400&v=beta&t=kiPP9GRY29Creui6jo89D4BI56QlC55KKfyK8YsCJ6o"
+						alt="Foto de Jhosselyn Cortez"
+					/>
+					<Card.Body>
+						<Card.Title>Jhosselyn Cortez</Card.Title>
+						<Card.Text>
+						Desarrolladora Web Fullstack
+						</Card.Text>
+						<Link
+							to="linkedin.com/in/jhosselyn-cortez-cruz-/"
+							target="_blank">
+							<Button variant="danger">LinkedIn</Button>
+						</Link>
+						<Link to="https://github.com/JhosselynCC">
+							<Button variant="danger" target="_blank">
+								Github
+							</Button>
+						</Link>
+					</Card.Body>
+				</Card>
 				<Card style={{ width: "16rem" }}>
 					<Card.Img
 						variant="top"
@@ -105,31 +126,6 @@ export const Nosotros = () => {
 						</Link>
 					</Card.Body>
 				</Card>
-
-				<Card style={{ width: "16rem" }}>
-					<Card.Img
-						variant="top"
-						src="https://avatars.githubusercontent.com/u/114850403?v=4"
-						alt="Foto de Jhosselyn Cortez"
-					/>
-					<Card.Body>
-						<Card.Title>Jhosselyn Cortez</Card.Title>
-						<Card.Text>
-						Desarrolladora Web Fullstack
-						</Card.Text>
-						<Link
-							to="https://www.linkedin.com/"
-							target="_blank">
-							<Button variant="danger">LinkedIn</Button>
-						</Link>
-						<Link to="https://github.com/JhosselynCC">
-							<Button variant="danger" target="_blank">
-								Github
-							</Button>
-						</Link>
-					</Card.Body>
-				</Card>
-
 				<Card style={{ width: "16rem" }}>
 					<Card.Img variant="top" src="https://media.licdn.com/dms/image/C4D03AQHXXa4vXGj44A/profile-displayphoto-shrink_200_200/0/1641812774092?e=1695254400&v=beta&t=TztcexsuL3lWfQmddLijNGH83v6thwap7gAhZhbCVVE"
 					alt="Foto de Nicolás Bilic"
